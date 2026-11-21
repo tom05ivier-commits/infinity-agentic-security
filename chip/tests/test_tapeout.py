@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: Tom05ivier-commits-1.0
+# Copyright (c) 2026 Tomi vier
+# Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+"""Pengujian paket serah-terima chip."""
+
+from __future__ import annotations
+
+import json
+import sys
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from chip.tapeout.build_tapeout import build  # noqa: E402
+
+
+class TapeoutTests(unittest.TestCase):
+    def test_build_package(self) -> None:
+        result = build()
+        self.assertEqual(result["status"], "OK")
+        self.assertGreaterEqual(result["files"], 30)
+        archive = Path(result["archive"])
+        self.assertTrue(archive.exists())
+
+    def test_manifest_marks_not_ready(self) -> None:
+        result = build()
+        manifest = Path(result["package"]) / "MANIFEST.json"
+        data = json.loads(manifest.read_text())
+        self.assertEqual(data["fabrication_status"], "NOT_READY")
+        self.assertEqual(data["license"], "Tom05ivier-commits-1.0")
+
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)

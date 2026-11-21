@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: Tom05ivier-commits-1.0
+# Copyright (c) 2026 Tomi vier
+# Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+
+# Dependensi & artefak runtime
+__pycache__/
+*.pyc
+*.pyo
+*.log
+dashboard.html
+.git/
+.pytest_cache/
+
+# Data runtime & audit (divolume saat produksi)
+security/quarantine/
+security/logs/
+security/reports/
+system/reports/
+credentials/
+.env
+.env.*
+
+# Dokumen otorisasi pribadi — jangan masuk image
+surat-*.md
+
+# Klon sumber pihak ketiga (sangat besar & lisensinya bukan kita)
+src/
+opencode-src/
+publish/
+
+# Arsip unduhan
+*.tar.gz
+*.tar.xz
+*.tgz
+*.zip

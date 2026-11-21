@@ -1,0 +1,169 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: Tom05ivier-commits-1.0
+# Copyright (c) 2026 Tomi vier
+# Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+#
+# CLI tom05 (nama baru hy4) untuk opencode/hy4-flash-free.
+# Perintah lama "hy4" tetap bekerja sebagai alias.
+
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MODEL="tom05-flash-free"
+CATALOG="${TOM05_CATALOG:-$ROOT/config/tom05-models.json}"
+APIKEY_TOOL="${TOM05_APIKEY_TOOL:-$ROOT/tools/apikey_demo.py}"
+if [ ! -f "$CATALOG" ]; then
+  echo "[tom05] Katalog tidak ditemukan: $CATALOG" >&2
+  exit 2
+fi
+PORT=""
+CONTINUE_FLAG=0
+FOLLOW_PORT=0
+ARGS=()
+
+detect_port() {
+  # Cari port server opencode yang sedang berjalan.
+  local detected
+  detected="$(ps -eo args 2>/dev/null | grep -oE 'serve --hostname [^ ]+ --port [0-9]+' | grep -oE '[0-9]+$' | head -1 || true)"
+  echo "${detected:-}"
+}
+
+list_models() {
+  python3 - "$CATALOG" <<'INNER'
+import json, sys
+with open(sys.argv[1], encoding="utf-8") as handle:
+    data = json.load(handle)
+for item in data["models"]:
+    variants = ",".join(item["variants"]) or "-"
+    print(f'{item["id"]}\t{item["name"]}\t{variants}')
+for item in data.get("aliases", []):
+    variants = ",".join(item["variants"]) or "-"
+    print(f'{item["id"]}\t{item["name"]} -> {item["target"]}\t{variants}')
+INNER
+}
+
+# Cetak model nyata bila ID dikenal (alias diterjemahkan ke targetnya).
+resolve_model() {
+  python3 - "$CATALOG" "$1" <<'INNER'
+import json, sys
+with open(sys.argv[1], encoding="utf-8") as handle:
+    data = json.load(handle)
+wanted = sys.argv[2]
+for item in data["models"]:
+    if item["id"] == wanted:
+        print(item["id"]); sys.exit(0)
+for item in data.get("aliases", []):
+    if wanted in (item["id"], item["name"].lower().replace(" ", "-")):
+        print(item["target"]); sys.exit(0)
+sys.exit(1)
+INNER
+}
+
+# Terjemahkan default (alias Tom05) ke ID model provider yang nyata.
+if ! MODEL="$(resolve_model "$MODEL")"; then
+  echo "[tom05] Model default tidak ditemukan di katalog: $CATALOG" >&2
+  exit 2
+fi
+
+usage() {
+  cat <<'EOF'
+Penggunaan:
+  tom05 "pertanyaan"                 Tanya model Tom05 flash Free (default)
+  tom05 --port 46841 "pertanyaan"    Hubung ke server OpenCode di port itu
+  tom05 --port auto "pertanyaan"     Deteksi port server yang berjalan
+  tom05 --port-file port.txt "..."   Baca port dari berkas
+  echo 46841 | tom05 --port-stdin "..."
+  tom05 --continue "lanjutan"        Lanjut sesi terakhir
+  tom05 --follow-port "pertanyaan"   Lanjut otomatis bila jawaban memuat port
+  tom05 --list-models                Tampilkan semua model gratis yang tersedia
+  tom05 --apikey-check               Uji tanda tangan API key (tanpa kredensial)
+  tom05 --apikey-sign "payload"      Header bertanda tangan (kunci disembunyikan)
+  tom05 --apikey-rotate             Cek usia kunci API (sidik jari saja)
+  tom05 --apikey-redact             Samarkan kredensial dari stdin
+  tom05-apikey sign|verify|selftest  Akses penuh ke utilitas API key
+  tom05 --model tom05-flash-free    Alias "Tom05 flash Free" → opencode/hy4-flash-free
+  tom05 --model opencode/... "..."  Pakai model gratis lain dari katalog tom05
+  tom05 --help                       Bantuan ini
+EOF
+}
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --version|-v)
+      echo "tom05 CLI 1.2.0 — model ${MODEL}"
+      opencode --version
+      exit 0
+      ;;
+    --help|-h) usage; exit 0 ;;
+    --list-models)
+      list_models; exit 0 ;;
+    --apikey-check)
+      python3 "$APIKEY_TOOL" selftest; exit $? ;;
+    --apikey-sign)
+      python3 "$APIKEY_TOOL" sign --body "${2:-}"; exit $? ;;
+    --apikey-rotate)
+      python3 "$APIKEY_TOOL" rotate-status; exit $? ;;
+    --apikey-redact)
+      python3 "$APIKEY_TOOL" redact; exit $? ;;
+    --model|-m)
+      requested="${2:-}"; shift 2 || exit 1
+      if ! resolved="$(resolve_model "$requested")"; then
+        echo "[tom05] Model '$requested' tidak ada dalam katalog model gratis." >&2
+        echo "[tom05] Jalankan 'tom05 --list-models' untuk melihat daftar." >&2
+        exit 2
+      fi
+      MODEL="$resolved"
+      ;;
+    --port|-p)
+      PORT="${2:-}"; shift 2 || exit 1 ;;
+    --port=*)
+      PORT="${1#*=}"; shift ;;
+    --port-file)
+      PORT="$(head -n1 "${2:-}" 2>/dev/null | tr -dc '0-9' || true)"; shift 2 || exit 1 ;;
+    --port-stdin)
+      PORT="$(head -n1 /dev/stdin 2>/dev/null | tr -dc '0-9' || true)"; shift ;;
+    --follow-port)
+      FOLLOW_PORT=1; shift ;;
+    --continue|-c)
+      CONTINUE_FLAG=1; ARGS+=("--continue"); shift ;;
+    --prompt)
+      shift ;;
+    *)
+      ARGS+=("$1"); shift ;;
+  esac
+done
+
+if [ "${PORT:-}" = "auto" ] || [ -z "${PORT:-}" ]; then
+  PORT="$(detect_port || true)"
+fi
+
+if [ -n "${PORT:-}" ]; then
+  SERVER_ARG=(--server "http://127.0.0.1:${PORT}")
+else
+  SERVER_ARG=()
+fi
+
+if [ ! -f "AGENTS.md" ] && [ -f "$ROOT/AGENTS.md" ]; then
+  cd "$ROOT"
+fi
+
+OUTPUT="$(mktemp)"
+run_once() {
+  opencode run --model "${MODEL}" "${SERVER_ARG[@]}" "${ARGS[@]}" 2>&1 | tee "$OUTPUT"
+}
+
+run_once
+
+if [ "$FOLLOW_PORT" -eq 1 ]; then
+  NEXT_PORT="$(
+    grep -oE \
+      '(PORT|port|Port)[^0-9]{0,4}[0-9]{2,5}|127\.0\.0\.1:[0-9]{2,5}|"port"[[:space:]]*:[[:space:]]*[0-9]{2,5}' \
+      "$OUTPUT" | grep -oE '[0-9]{2,5}' | tail -1 || true
+  )"
+  if [ -n "${NEXT_PORT:-}" ] && [ "$NEXT_PORT" != "${PORT:-}" ]; then
+    echo "[tom05] Port diterima: ${NEXT_PORT}. Melanjutkan perintah..." >&2
+    SERVER_ARG=(--server "http://127.0.0.1:${NEXT_PORT}")
+    ARGS+=("--continue")
+    run_once
+  fi
+fi
+rm -f "$OUTPUT"

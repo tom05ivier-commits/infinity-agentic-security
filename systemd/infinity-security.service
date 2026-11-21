@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: Tom05ivier-commits-1.0
+# Copyright (c) 2026 Tomi vier
+# Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+#
+# Unit systemd untuk menjalankan Infinity Security System dengan CAP_NET_ADMIN.
+# Pasang di host yang memiliki systemd:
+#   sudo cp systemd/infinity-security.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now infinity-security
+
+[Unit]
+Description=Infinity Security System (IT Agenty / Tomi vier)
+Documentation=file:///root/workspace/security/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/workspace
+Environment=AGENTY_WORKSPACE=/root/workspace
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONIOENCODING=utf-8
+
+# Berikan CAP_NET_ADMIN pada proses dan turunannya.
+CapabilityBoundingSet=CAP_NET_ADMIN
+AmbientCapabilities=CAP_NET_ADMIN
+NoNewPrivileges=no
+
+ExecStartPre=/usr/bin/python3 /root/workspace/security/security_cli.py firewall capability
+ExecStart=/usr/bin/python3 /root/workspace/system/cli.py serve --host 127.0.0.1 --port 8765
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

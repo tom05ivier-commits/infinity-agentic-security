@@ -1,0 +1,225 @@
+{"timestamp": "2026-11-19T12:11:09.055416+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T12:11:09.803474+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify"]}
+{"timestamp": "2026-11-19T12:11:10.373108+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify"]}
+{"timestamp": "2026-11-19T12:11:12.151757+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify"]}
+{"timestamp": "2026-11-19T12:13:06.911345+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T12:13:07.686913+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify"]}
+{"timestamp": "2026-11-19T12:13:08.395974+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify"]}
+{"timestamp": "2026-11-19T12:13:45.177119+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T12:13:45.940390+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:13:46.511192+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:13:47.935482+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:14:01.201858+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T12:14:01.857748+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:14:02.430061+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:17:07.506004+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T12:17:08.440344+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:17:09.017403+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:21:04.221987+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T12:21:04.913615+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:21:05.496129+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:28:33.407564+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T12:28:34.169672+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:28:34.819337+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:29:47.356307+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T12:29:48.137606+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:29:48.747289+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:46:05.030316+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T12:46:05.965112+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:46:06.609483+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:50:55.333198+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T12:50:56.107996+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:50:56.752642+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:54:10.038260+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T12:54:10.940903+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:54:11.587500+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:59:33.440353+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T12:59:34.234799+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T12:59:34.841154+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T13:23:07.646166+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T13:23:11.370404+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T13:23:15.027418+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T13:34:59.505780+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T13:35:03.558616+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T13:35:07.404505+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T13:39:01.382499+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T13:39:05.464222+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T13:39:09.350101+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T13:44:32.060988+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T13:44:36.103636+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T13:44:40.107753+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T13:57:48.808129+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T13:57:53.199616+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T13:57:57.425088+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T14:33:53.369954+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T14:33:54.414918+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T14:33:55.047107+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T15:22:49.210454+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T15:22:49.957715+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T15:22:50.484840+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T22:38:37.915115+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T22:38:38.860649+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T22:38:39.747585+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T22:41:18.520296+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T22:41:19.193270+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T22:41:19.745241+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T22:54:53.274929+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T22:54:54.039926+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T22:54:54.627990+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T22:58:14.522943+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T22:58:15.196005+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T22:58:15.776200+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T22:59:55.461472+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-19T22:59:56.122561+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-19T22:59:56.695027+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:16:03.956900+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T01:16:04.609918+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:16:05.173403+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:30:41.642799+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T01:30:42.588559+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:30:43.191706+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:32:32.416555+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T01:32:33.325650+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:32:33.960478+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:37:51.264974+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T01:37:52.161800+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:37:52.859606+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:43:29.603104+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T01:43:30.356481+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:43:30.965578+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:47:12.469118+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T01:47:13.250921+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:47:14.053209+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:52:31.621590+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T01:52:32.325444+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T01:52:32.928822+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T02:13:39.189934+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T02:13:40.017238+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T02:13:40.661724+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T02:19:25.894419+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T02:19:26.900918+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T02:19:27.617311+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T02:25:26.304057+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T02:25:27.084587+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T02:25:27.700177+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T02:41:37.238080+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T02:41:38.090236+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T02:41:38.789466+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:01:18.337251+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T03:01:19.141063+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:01:19.807158+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:07:20.559879+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T03:07:22.047989+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:07:23.516647+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:15:06.372039+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T03:15:07.769014+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:15:08.484129+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:18:25.409954+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T03:18:26.233480+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:18:26.719783+00:00", "goal": "status sistem", "status": "FAILED", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:18:27.571563+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:33:04.206089+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T03:33:05.150623+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:33:05.953155+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:43:30.758301+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T03:43:31.860235+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:43:32.570948+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:51:21.475952+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T03:51:22.418296+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:51:23.163477+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:52:55.226114+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T03:52:56.137304+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:52:56.913268+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:58:46.703812+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T03:58:47.561785+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T03:58:48.227877+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T04:12:41.190552+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T04:12:42.376861+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T04:12:43.369349+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T04:16:04.094511+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T04:16:04.947145+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T04:16:05.716144+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T04:48:01.959507+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T04:48:03.212114+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T04:48:04.041430+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T04:56:06.779474+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T04:56:08.116957+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T04:56:08.903329+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T05:16:29.840529+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T05:16:31.191649+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T05:16:31.927967+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T05:47:18.817718+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T05:47:20.797817+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T05:47:21.802700+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T05:53:01.541792+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T05:53:04.055027+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T05:53:05.525349+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T05:58:00.231942+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T05:58:02.115958+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T05:58:03.099729+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T09:31:26.593341+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T09:31:27.508336+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T09:31:28.272368+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T09:38:41.872092+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T09:38:43.041193+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T09:38:43.789544+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T09:43:10.556093+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T09:43:11.920800+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T09:43:12.864643+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T10:00:10.774892+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T10:00:12.145839+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T10:00:13.078245+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T10:33:51.517754+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T10:33:52.454239+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T10:33:53.203593+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T10:44:15.533329+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T10:44:16.475456+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T10:44:17.300565+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T10:58:45.792470+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T10:58:47.172647+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T10:58:48.049600+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T11:01:44.754272+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T11:01:46.101849+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T11:01:46.991131+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T11:21:42.492466+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T11:21:43.773160+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T11:21:44.561515+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T11:26:31.969046+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T11:26:33.279657+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T11:26:34.078177+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T11:52:19.917467+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T11:52:20.908255+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T11:52:21.729678+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T11:55:35.876327+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T11:55:37.124217+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T11:55:37.932080+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T12:01:53.008688+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T12:01:54.391282+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T12:01:55.254426+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T12:25:01.128948+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T12:25:02.576613+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T12:25:03.443125+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T12:27:45.609691+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T12:27:46.894019+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T12:27:47.825417+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T16:00:08.509945+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T16:00:09.815881+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T16:00:10.663402+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T16:27:40.239108+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T16:27:41.523648+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T16:27:42.364860+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T16:31:58.088304+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T16:31:59.241603+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T16:32:00.103724+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T16:49:43.738377+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T16:49:45.160716+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T16:49:46.092280+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T16:59:40.691713+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T16:59:42.117258+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T16:59:42.968479+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T17:19:37.990871+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T17:19:39.367648+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T17:19:40.227653+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T17:26:30.197175+00:00", "goal": "serang lab dengan malware", "status": "PARTIAL", "tasks": ["status", "drill", "knowledge"]}
+{"timestamp": "2026-11-20T17:26:31.557732+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}
+{"timestamp": "2026-11-20T17:26:32.435210+00:00", "goal": "status sistem", "status": "SUCCESS", "tasks": ["status", "verify", "knowledge"]}

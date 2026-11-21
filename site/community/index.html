@@ -1,0 +1,88 @@
+<!--
+  SPDX-License-Identifier: Tom05ivier-commits-1.0
+  Copyright (c) 2026 Tomi vier
+-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>IT Agenty Community</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/" aria-label="Beranda portal komunitas">
+        <span class="brand-mark" aria-hidden="true">IA</span>
+        <span>
+          <strong>IT Agenty Community</strong>
+          <small>Infinity Computer System</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="http://127.0.0.1:8769/">Hub Situs</a>
+        <a href="/README.md">Dokumentasi</a>
+        <a href="/health">Status</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro" aria-labelledby="intro-title">
+      <h1 id="intro-title">Ruang diskusi komunitas</h1>
+      <p>
+        Tempat berbagi gagasan, catatan, dan pertanyaan seputar IT Agenty.
+        Tulis posting baru, lalu ikuti percakapan lewat balasan.
+      </p>
+    </section>
+
+    <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+
+    <section class="card" aria-labelledby="composer-title">
+      <h2 id="composer-title">Tulis posting</h2>
+      <form id="post-form" novalidate>
+        <div class="field">
+          <label for="post-title">Judul</label>
+          <input id="post-title" name="title" type="text" maxlength="120"
+                 placeholder="Judul diskusi" required autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="post-author">Nama</label>
+          <input id="post-author" name="author" type="text" maxlength="60"
+                 placeholder="Nama Anda" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="post-body">Isi</label>
+          <textarea id="post-body" name="body" rows="5" maxlength="5000"
+                    placeholder="Tulis isi posting di sini..." required></textarea>
+        </div>
+        <div class="actions">
+          <button id="post-submit" type="submit">Terbitkan posting</button>
+          <span class="hint">Maks. 120 karakter judul, 60 nama, 5000 isi.</span>
+        </div>
+      </form>
+    </section>
+
+    <section aria-labelledby="posts-title">
+      <div class="section-head">
+        <h2 id="posts-title">Diskusi</h2>
+        <button id="refresh-btn" type="button" class="ghost">Muat ulang</button>
+      </div>
+      <div id="posts" class="posts" aria-live="polite">
+        <p class="empty">Memuat posting...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>IT Agenty Community &mdash; karya baru, lisensi Tom05ivier-commits-1.0.</span>
+      <span>&copy; 2026 Tomi vier &middot; (__signature__)</span>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

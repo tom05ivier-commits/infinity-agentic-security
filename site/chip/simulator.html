@@ -1,0 +1,120 @@
+<!doctype html>
+<!--
+  SPDX-License-Identifier: Tom05ivier-commits-1.0
+  Copyright (c) 2026 Tomi vier
+  Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+-->
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulator Chip — Sandbox Chip Merah Putih</title>
+  <meta name="description" content="Rancang, uji, dan simulasikan desain chip digital langsung dari browser — mandiri, tanpa CDN." />
+  <meta name="theme-color" content="#e14b4b" />
+  <meta name="author" content="IT Agenty — pengembangan mandiri" />
+  <meta name="generator" content="IT Agenty — Tom05ivier-commits-1.0" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://chip.peruri.co.id/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/logomark.svg" />
+  <link rel="manifest" href="manifest.json" />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sandbox Chip Merah Putih" />
+  <meta property="og:title" content="Simulator Chip — Sandbox Chip Merah Putih" />
+  <meta property="og:description" content="Rancang, uji, dan simulasikan desain chip digital langsung dari browser." />
+  <meta property="og:image" content="assets/favicon-32.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Simulator Chip — Sandbox Chip Merah Putih" />
+  <meta name="twitter:description" content="Simulasi chip digital mandiri di browser." />
+  <meta name="twitter:image" content="assets/favicon-32.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="simulator.css" />
+</head>
+<body>
+<a class="skip" href="#utama">Lewati ke konten utama</a>
+
+<header class="site-header sim-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="Kembali ke beranda Sandbox Chip Merah Putih">
+      <span class="brand-logo" aria-hidden="true"><span></span><span></span></span>
+      <span><b>Sandbox Chip</b><em>Merah Putih · Simulator</em></span>
+    </a>
+    <nav class="nav sim-nav" aria-label="Navigasi simulator">
+      <a href="index.html">← Beranda</a>
+      <a href="index.html#katalog">Katalog</a>
+    </nav>
+  </div>
+</header>
+
+<main id="utama" class="sim-main">
+  <div class="container">
+    <div class="sim-intro">
+      <p class="eyebrow">Simulator mandiri</p>
+      <h1>Rancang, uji, dan lihat hasilnya langsung.</h1>
+      <p>Tulis desain Verilog sederhana, jalankan simulasi, lalu amati bentuk gelombangnya. Semua berjalan di browser — tidak memerlukan internet.</p>
+    </div>
+
+    <div class="sim-toolbar">
+      <label for="preset">Contoh desain</label>
+      <select id="preset">
+        <option value="adder">Adder 4-bit</option>
+        <option value="counter">Counter 4-bit</option>
+        <option value="traffic">Traffic light</option>
+        <option value="andgate">AND gate 2-input</option>
+        <option value="full_adder">Full adder (carry)</option>
+        <option value="mux2">MUX 2-input</option>
+        <option value="decoder2">Decoder 2-to-4</option>
+        <option value="parity4">Parity generator 4-bit</option>
+        <option value="alu4">ALU 4-bit (4 operasi)</option>
+        <option value="hy4_dot4">hy4 — dot product 4 fitur</option>
+        <option value="hy4_quant">hy4 — kuantisasi skor</option>
+        <option value="hy4_top">hy4 — inti akselerator</option>
+      </select>
+      <button class="btn btn-primary" type="button" id="run">▶ Jalankan simulasi</button>
+      <button class="btn btn-outline" type="button" id="save">Simpan</button>
+      <button class="btn btn-ghost" type="button" id="download">Unduh .v</button>
+    </div>
+
+    <p class="status" id="status" role="status" aria-live="polite">Siap. Pilih contoh atau tulis desainmu sendiri, lalu jalankan simulasi.</p>
+
+    <div class="sim-grid">
+      <section class="panel editor-panel" aria-labelledby="editor-title">
+        <div class="panel-head"><h2 id="editor-title">Editor desain</h2><span id="module-name">—</span></div>
+        <label class="sr-only" for="code">Kode desain Verilog</label>
+        <textarea id="code" spellcheck="false" aria-describedby="hint"></textarea>
+        <p class="hint" id="hint">Mendukung: module/port input·output, assign, operator + − * &amp; | ^ ~ &lt;&lt; &gt;&gt;, dan literal seperti 4'b1010. Draft tersimpan otomatis di browser ini.</p>
+      </section>
+
+      <section class="panel result-panel" aria-labelledby="result-title">
+        <div class="panel-head"><h2 id="result-title">Hasil pengujian</h2><span id="result-badge">belum dijalankan</span></div>
+        <div class="table-wrap">
+          <table id="results">
+            <thead><tr><th>#</th></tr></thead>
+            <tbody><tr><td class="muted">Jalankan simulasi untuk melihat hasil.</td></tr></tbody>
+          </table>
+        </div>
+        <div class="wave-wrap">
+          <h3>Bentuk gelombang</h3>
+          <div id="waveform" class="waveform"><p class="muted">Belum ada data.</p></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel saved-panel" aria-labelledby="saved-title">
+      <div class="panel-head"><h2 id="saved-title">Riwayat desain tersimpan</h2><span class="muted">tersimpan di browser ini</span></div>
+      <ul id="saved-list" class="saved-list"><li class="muted">Belum ada desain tersimpan.</li></ul>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p><b>Simulator Chip Merah Putih</b> — pengembangan mandiri oleh IT Agenty.</p>
+    <p class="muted">Tom05ivier-commits v1.0 · Berjalan sepenuhnya lokal di dalam container.</p>
+  </div>
+</footer>
+
+<script src="simulator.js"></script>
+</body>
+</html>

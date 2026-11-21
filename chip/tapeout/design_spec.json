@@ -1,0 +1,37 @@
+{
+  "design": "Infinity Mini Chip",
+  "version": "1.0.0",
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "top_modules": [
+    "full_adder",
+    "mux2",
+    "decoder2",
+    "parity4",
+    "alu4",
+    "hy4_dot4",
+    "hy4_quant",
+    "hy4_top"
+  ],
+  "verification": {
+    "rtl_vectors": 1588,
+    "rtl_status": "PASS",
+    "gate_level_sim": "PASS",
+    "synthesis_cells": 135,
+    "tools": {
+      "yosys": "0.33",
+      "iverilog": "12.0"
+    }
+  },
+  "fabrication_status": "NOT_READY",
+  "reason": "PDK, standard-cell library, place-and-route, timing closure, DRC/LVS, dan GDSII belum tersedia",
+  "deliverables": [
+    "rtl/",
+    "synth/",
+    "tb/tb_chip.v",
+    "reports/",
+    "constraints.sdc",
+    "MANIFEST.json",
+    "CHECKSUMS.sha256"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "Tom05ivier-commits-1.0",
+  "blocked_ips": [
+    "203.0.113.66"
+  ],
+  "denied_ports": [
+    "tcp/23",
+    "tcp/65534"
+  ],
+  "allowed_ports": [
+    "tcp/22"
+  ]
+}

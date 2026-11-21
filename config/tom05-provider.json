@@ -1,0 +1,18 @@
+{
+  "license": "Tom05ivier-commits-1.0",
+  "status": "BELUM_TERSEDIA",
+  "repository": "https://github.com/tom05ivier-commits/provider-tom05",
+  "owner": "tom05ivier-commits",
+  "branch": "main",
+  "commit": "37893e321fe154a24e87de970071216bf64ed412",
+  "isi_repo": [".gitignore", "LICENSE"],
+  "lisensi_repo": "GNU AFFERO GENERAL PUBLIC LICENSE v3.0",
+  "tujuan": "Calon penyedia mandiri untuk identitas Tom05, terpisah dari namespace opencode.",
+  "batasan": [
+    "Belum ada kode provider, schema model, atau endpoint yang bisa dipakai.",
+    "Lisensi AGPL-3.0 pada repo berbeda dengan Tom05ivier-commits-1.0; keputusan lisensi perlu pemilik.",
+    "CLI tom05 tetap memakai katalog lokal dan model nyata opencode/hy4-flash-free sampai provider ini tersedia.",
+    "Tidak ada kredensial yang dibaca atau disimpan di berkas ini."
+  ],
+  "aktif": false
+}

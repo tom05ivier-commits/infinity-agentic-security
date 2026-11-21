@@ -1,0 +1,42 @@
+{
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "timestamp": "2026-11-21T19:04:23.605Z",
+  "url": "http://127.0.0.1:8769/chip/simulator.html",
+  "presets": [
+    {
+      "preset": "hy4_dot4",
+      "module": "hy4_dot4",
+      "badge": "berhasil · 8 vektor",
+      "vectors": 8,
+      "waveform": true,
+      "mismatches": 0,
+      "pass": true
+    },
+    {
+      "preset": "hy4_quant",
+      "module": "hy4_quant",
+      "badge": "berhasil · 8 vektor",
+      "vectors": 8,
+      "waveform": true,
+      "mismatches": 0,
+      "pass": true
+    },
+    {
+      "preset": "hy4_top",
+      "module": "hy4_top",
+      "badge": "berhasil · 8 vektor",
+      "vectors": 8,
+      "waveform": true,
+      "mismatches": 0,
+      "pass": true
+    }
+  ],
+  "scopedErrors": [],
+  "page": {
+    "secureContext": true,
+    "serviceWorker": true,
+    "externalResources": []
+  },
+  "status": "PASS"
+}

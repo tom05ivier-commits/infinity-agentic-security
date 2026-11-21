@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "note": "Daftar semua server yang dikelola supervisor. Tambah entri di sini bila ada komponen baru yang membutuhkan server.",
+  "services": [
+    {
+      "name": "server",
+      "kind": "http",
+      "port": 8765,
+      "health": "/api/health",
+      "command": [
+        "python3",
+        "system/cli.py",
+        "serve",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8765"
+      ]
+    },
+    {
+      "name": "protection",
+      "kind": "process",
+      "command": [
+        "python3",
+        "system/cli.py",
+        "protect",
+        "--seconds",
+        "3600",
+        "--interval",
+        "0.5"
+      ]
+    },
+    {
+      "name": "bridge",
+      "kind": "http",
+      "port": 8766,
+      "health": "/v1/health",
+      "command": [
+        "python3",
+        "copilot-bridge/bridge.py"
+      ]
+    },
+    {
+      "name": "files",
+      "kind": "http",
+      "port": 8767,
+      "health": "/",
+      "command": [
+        "python3",
+        "system/fileserver.py",
+        "8767"
+      ]
+    },
+    {
+      "name": "public",
+      "kind": "process",
+      "command": [
+        "python3",
+        "system/public_server.py",
+        "8768"
+      ]
+    },
+    {
+      "name": "tunnel",
+      "kind": "process",
+      "command": [
+        "bash",
+        "system/tunnel.sh"
+      ]
+    },
+    {
+      "name": "workflow",
+      "kind": "process",
+      "command": [
+        "bash",
+        "security/workflow-daemon.sh"
+      ]
+    },
+    {
+      "name": "sites",
+      "kind": "http",
+      "command": [
+        "python3",
+        "site/server.py",
+        "8769"
+      ],
+      "port": 8769,
+      "health": "/health"
+    },
+    {
+      "name": "mirror",
+      "kind": "http",
+      "command": [
+        "python3",
+        "site/mirror_server.py",
+        "8770"
+      ],
+      "port": 8770,
+      "health": "/health"
+    },
+    {
+      "name": "community",
+      "kind": "http",
+      "command": [
+        "python3",
+        "site/community/server.py"
+      ],
+      "port": 8781,
+      "health": "/health"
+    },
+    {
+      "name": "symphony",
+      "kind": "process",
+      "command": [
+        "bash",
+        "scripts/symphony-deploy.sh"
+      ]
+    }
+  ]
+}

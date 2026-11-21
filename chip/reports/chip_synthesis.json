@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "tools": {
+    "yosys": "0.33",
+    "iverilog": "12.0"
+  },
+  "modules": [
+    {
+      "module": "full_adder",
+      "cells": 7,
+      "gate_netlist": true,
+      "json_netlist": true
+    },
+    {
+      "module": "mux2",
+      "cells": 4,
+      "gate_netlist": true,
+      "json_netlist": true
+    },
+    {
+      "module": "decoder2",
+      "cells": 6,
+      "gate_netlist": true,
+      "json_netlist": true
+    },
+    {
+      "module": "parity4",
+      "cells": 3,
+      "gate_netlist": true,
+      "json_netlist": true
+    },
+    {
+      "module": "alu4",
+      "cells": 65,
+      "gate_netlist": true,
+      "json_netlist": true
+    },
+    {
+      "module": "hy4_dot4",
+      "cells": 26,
+      "gate_netlist": true,
+      "json_netlist": true
+    },
+    {
+      "module": "hy4_quant",
+      "cells": 0,
+      "gate_netlist": true,
+      "json_netlist": true
+    },
+    {
+      "module": "hy4_top",
+      "cells": 24,
+      "gate_netlist": true,
+      "json_netlist": true
+    }
+  ],
+  "total_cells": 135,
+  "license": "Tom05ivier-commits-1.0"
+}

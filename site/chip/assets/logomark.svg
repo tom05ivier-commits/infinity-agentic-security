@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo Sandbox Chip Merah Putih">
+  <!-- SPDX-License-Identifier: Tom05ivier-commits-1.0 · Copyright (c) 2026 Tomi vier -->
+  <rect width="64" height="64" rx="14" fill="#e14b4b"/>
+  <rect x="16" y="16" width="32" height="32" rx="6" fill="#fff"/>
+  <g stroke="#e14b4b" stroke-width="3" stroke-linecap="round">
+    <path d="M24 8v8M40 8v8M24 48v8M40 48v8M8 24h8M8 40h8M48 24h8M48 40h8"/>
+  </g>
+  <path d="M25 32h14M32 25v14" stroke="#0b1220" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,644 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "hy4_top": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "chip/rtl/hy4_top.v:9.1-11.10"
+      },
+      "ports": {
+        "a0": {
+          "direction": "input",
+          "bits": [ 2, 3 ]
+        },
+        "a1": {
+          "direction": "input",
+          "bits": [ 4, 5 ]
+        },
+        "a2": {
+          "direction": "input",
+          "bits": [ 6, 7 ]
+        },
+        "a3": {
+          "direction": "input",
+          "bits": [ 8, 9 ]
+        },
+        "level": {
+          "direction": "output",
+          "bits": [ 10, 11 ]
+        }
+      },
+      "cells": {
+        "$auto$simplemap.cc:75:simplemap_bitop$1063": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.34|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:248.19-248.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5 ],
+            "B": [ 12 ],
+            "Y": [ 13 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1137": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:240.19-240.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 14 ],
+            "B": [ 15 ],
+            "Y": [ 16 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1205": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:248.19-248.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 17 ],
+            "B": [ 18 ],
+            "Y": [ 19 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1221": {
+          "hide_name": 1,
+          "type": "$_OR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:240.12-240.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 20 ],
+            "B": [ 16 ],
+            "Y": [ 18 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1263": {
+          "hide_name": 1,
+          "type": "$_OR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:248.12-248.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21 ],
+            "B": [ 19 ],
+            "Y": [ 22 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1489": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:248.19-248.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 23 ],
+            "Y": [ 24 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$178": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.34|/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5 ],
+            "B": [ 12 ],
+            "Y": [ 25 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$210": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.34|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 4 ],
+            "Y": [ 26 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$242": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.34|/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 4 ],
+            "Y": [ 12 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$513": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 17 ],
+            "B": [ 18 ],
+            "Y": [ 27 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$514": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 28 ],
+            "B": [ 22 ],
+            "Y": [ 29 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$545": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 30 ],
+            "B": [ 26 ],
+            "Y": [ 14 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$546": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 31 ],
+            "B": [ 25 ],
+            "Y": [ 17 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$547": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 24 ],
+            "B": [ 13 ],
+            "Y": [ 28 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$576": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6 ],
+            "B": [ 2 ],
+            "Y": [ 15 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$577": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 30 ],
+            "B": [ 26 ],
+            "Y": [ 20 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$578": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 31 ],
+            "B": [ 25 ],
+            "Y": [ 21 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$675": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.56|chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 32 ],
+            "B": [ 33 ],
+            "Y": [ 11 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$707": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.56|chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8 ],
+            "B": [ 27 ],
+            "Y": [ 10 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$708": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.56|chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9 ],
+            "B": [ 29 ],
+            "Y": [ 32 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$739": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.56|chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8 ],
+            "B": [ 27 ],
+            "Y": [ 33 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$835": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 23 ],
+            "Y": [ 31 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$867": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 6 ],
+            "Y": [ 30 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$899": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 6 ],
+            "Y": [ 23 ]
+          }
+        }
+      },
+      "netnames": {
+        "$auto$maccmap.cc:240:synth$103.CO": {
+          "hide_name": 1,
+          "bits": [ "0", 23, 24, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/usr/bin/../share/yosys/techmap.v:274.23-274.25"
+          }
+        },
+        "$auto$maccmap.cc:240:synth$103.X": {
+          "hide_name": 1,
+          "bits": [ 6, 30, 7, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/usr/bin/../share/yosys/techmap.v:270.23-270.24"
+          }
+        },
+        "$auto$maccmap.cc:240:synth$103.Y": {
+          "hide_name": 1,
+          "bits": [ 6, 30, 31, 24, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/usr/bin/../share/yosys/techmap.v:270.26-270.27"
+          }
+        },
+        "$techmap$add$chip/rtl/hy4_top.v:10$2.$auto$alumacc.cc:485:replace_alu$87.CO": {
+          "hide_name": 1,
+          "bits": [ "0", 12, 13, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/hy4_top.v:10.21-10.34|/usr/bin/../share/yosys/techmap.v:274.23-274.25"
+          }
+        },
+        "$techmap$add$chip/rtl/hy4_top.v:10$2.$auto$alumacc.cc:485:replace_alu$87.X": {
+          "hide_name": 1,
+          "bits": [ 2, 26, 5, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/hy4_top.v:10.21-10.34|/usr/bin/../share/yosys/techmap.v:270.23-270.24"
+          }
+        },
+        "$techmap$add$chip/rtl/hy4_top.v:10$2.$auto$alumacc.cc:485:replace_alu$87.Y": {
+          "hide_name": 1,
+          "bits": [ 2, 26, 25, 13, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/hy4_top.v:10.21-10.34|/usr/bin/../share/yosys/techmap.v:270.26-270.27"
+          }
+        },
+        "$techmap$add$chip/rtl/hy4_top.v:10$4.$auto$alumacc.cc:485:replace_alu$91.CO": {
+          "hide_name": 1,
+          "bits": [ 15, 18, 22, 34, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:274.23-274.25",
+            "unused_bits": "3"
+          }
+        },
+        "$techmap$add$chip/rtl/hy4_top.v:10$4.$auto$alumacc.cc:485:replace_alu$91.X": {
+          "hide_name": 1,
+          "bits": [ 35, 14, 17, 28, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:270.23-270.24",
+            "unused_bits": "0 "
+          }
+        },
+        "$techmap$add$chip/rtl/hy4_top.v:10$4.$auto$alumacc.cc:485:replace_alu$91.Y": {
+          "hide_name": 1,
+          "bits": [ 35, 36, 27, 29, 34, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:270.26-270.27",
+            "unused_bits": "0 1 4"
+          }
+        },
+        "$techmap$add$chip/rtl/hy4_top.v:10$4.$auto$alumacc.cc:485:replace_alu$91.lcu.G": {
+          "hide_name": 1,
+          "bits": [ 15, 20, 21, 37, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:214.23-214.24",
+            "unused_bits": "3"
+          }
+        },
+        "$techmap$add$chip/rtl/hy4_top.v:10$6.$auto$alumacc.cc:485:replace_alu$91.CO": {
+          "hide_name": 1,
+          "bits": [ "0", "0", 33, 38, 39, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/hy4_top.v:10.21-10.56|chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:274.23-274.25",
+            "unused_bits": "3 4"
+          }
+        },
+        "$techmap$add$chip/rtl/hy4_top.v:10$6.$auto$alumacc.cc:485:replace_alu$91.X": {
+          "hide_name": 1,
+          "bits": [ 35, 36, 10, 32, 34, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/hy4_top.v:10.21-10.56|chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:270.23-270.24",
+            "unused_bits": "0 1 4"
+          }
+        },
+        "$techmap$techmap$add$chip/rtl/hy4_top.v:10$4.$auto$alumacc.cc:485:replace_alu$91.lcu.$and$/usr/bin/../share/yosys/techmap.v:240$276_Y": {
+          "hide_name": 1,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:240.19-240.41"
+          }
+        },
+        "$techmap$techmap$add$chip/rtl/hy4_top.v:10$4.$auto$alumacc.cc:485:replace_alu$91.lcu.$and$/usr/bin/../share/yosys/techmap.v:248$402_Y": {
+          "hide_name": 1,
+          "bits": [ 19 ],
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:10.21-10.45|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:248.19-248.41"
+          }
+        },
+        "a0": {
+          "hide_name": 0,
+          "bits": [ 2, 3 ],
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:9.28-9.30"
+          }
+        },
+        "a1": {
+          "hide_name": 0,
+          "bits": [ 4, 5 ],
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:9.32-9.34"
+          }
+        },
+        "a2": {
+          "hide_name": 0,
+          "bits": [ 6, 7 ],
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:9.36-9.38"
+          }
+        },
+        "a3": {
+          "hide_name": 0,
+          "bits": [ 8, 9 ],
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:9.40-9.42"
+          }
+        },
+        "level": {
+          "hide_name": 0,
+          "bits": [ 10, 11 ],
+          "attributes": {
+            "src": "chip/rtl/hy4_top.v:9.57-9.62"
+          }
+        }
+      }
+    }
+  }
+}

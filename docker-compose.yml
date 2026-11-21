@@ -1,0 +1,68 @@
+# SPDX-License-Identifier: Tom05ivier-commits-1.0
+# Copyright (c) 2026 Tomi vier
+# Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+#
+# Produksi: docker compose up -d --build
+# Dev aman: docker compose -f docker-compose.dev.yml up -d --build
+
+services:
+  infinity:
+    build: .
+    image: infinity-security:1.0
+    container_name: infinity-security
+    restart: unless-stopped
+    init: true
+
+    # CAP_NET_ADMIN memberi izin memasang aturan iptables.
+    cap_add:
+      - NET_ADMIN
+
+    # host network agar aturan berdampak pada antarmuka hardware host.
+    network_mode: host
+
+    environment:
+      AGENTY_WORKSPACE: /workspace
+      BIND_HOST: ${BIND_HOST:-127.0.0.1}
+      BIND_PORT: ${BIND_PORT:-8765}
+      AGENTY_INTERVAL: ${AGENTY_INTERVAL:-5}
+      ENABLE_KERNEL_FIREWALL: ${ENABLE_KERNEL_FIREWALL:-0}
+
+    volumes:
+      - reports:/workspace/security/reports
+      - logs:/workspace/security/logs
+      - quarantine:/workspace/security/quarantine
+      - firewall:/workspace/security/firewall
+      - system-reports:/workspace/system/reports
+
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+      - /var/tmp:size=64m,mode=1777
+
+    mem_limit: 512m
+    cpus: 1.0
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    healthcheck:
+      test:
+        - CMD
+        - python3
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/api/health', timeout=3)"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+    command: ["supervise"]
+
+volumes:
+  reports:
+  logs:
+  quarantine:
+  firewall:
+  system-reports:

@@ -1,0 +1,91 @@
+{
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "timestamp": "2026-11-21T19:26:14.232300+00:00",
+  "compiler": "Icarus Verilog version 12.0 (stable) ()",
+  "command": "iverilog -g2012 -Wall -tnull ... && iverilog -g2012 -Wall -o tb_chip ... && vvp +vcd=... tb_chip",
+  "rtl_files": [
+    "chip/rtl/alu4.v",
+    "chip/rtl/decoder2.v",
+    "chip/rtl/full_adder.v",
+    "chip/rtl/hy4_dot4.v",
+    "chip/rtl/hy4_quant.v",
+    "chip/rtl/hy4_top.v",
+    "chip/rtl/mux2.v",
+    "chip/rtl/parity4.v"
+  ],
+  "testbench": "chip/tb/tb_chip.v",
+  "lint_warnings": 0,
+  "lint_stderr": "",
+  "compile_warnings": 0,
+  "compile_stderr": "",
+  "simulation_output": "VCD info: dumpfile /root/workspace/chip/reports/tb_chip.vcd opened for output.\n=== Infinity Mini Chip testbench ===\nVECTOR full_adder 8 0\nVECTOR mux2 8 0\nVECTOR decoder2 4 0\nVECTOR parity4 16 0\nVECTOR alu4 1024 0\nVECTOR hy4_dot4 256 0\nVECTOR hy4_top 256 0\nVECTOR hy4_quant 16 0\nTOTAL 1608 0\nPASS: semua vektor benar.\n/root/workspace/chip/tb/tb_chip.v:154: $finish called at 1332000 (1ps)",
+  "modules": [
+    {
+      "name": "alu4",
+      "vectors": 1024,
+      "errors": 0,
+      "expected_vectors": 1024,
+      "status": "PASS"
+    },
+    {
+      "name": "decoder2",
+      "vectors": 4,
+      "errors": 0,
+      "expected_vectors": 4,
+      "status": "PASS"
+    },
+    {
+      "name": "full_adder",
+      "vectors": 8,
+      "errors": 0,
+      "expected_vectors": 8,
+      "status": "PASS"
+    },
+    {
+      "name": "hy4_dot4",
+      "vectors": 256,
+      "errors": 0,
+      "expected_vectors": 256,
+      "status": "PASS"
+    },
+    {
+      "name": "hy4_quant",
+      "vectors": 16,
+      "errors": 0,
+      "expected_vectors": 16,
+      "status": "PASS"
+    },
+    {
+      "name": "hy4_top",
+      "vectors": 256,
+      "errors": 0,
+      "expected_vectors": 256,
+      "status": "PASS"
+    },
+    {
+      "name": "mux2",
+      "vectors": 8,
+      "errors": 0,
+      "expected_vectors": 8,
+      "status": "PASS"
+    },
+    {
+      "name": "parity4",
+      "vectors": 16,
+      "errors": 0,
+      "expected_vectors": 16,
+      "status": "PASS"
+    }
+  ],
+  "vectors": 1588,
+  "checks": 1608,
+  "errors": 0,
+  "vcd": {
+    "path": "chip/reports/tb_chip.vcd",
+    "bytes": 71053
+  },
+  "duration_ms": 570,
+  "reasons": [],
+  "status": "PASS"
+}

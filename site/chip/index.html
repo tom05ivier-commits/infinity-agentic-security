@@ -1,0 +1,243 @@
+<!doctype html>
+<!--
+  SPDX-License-Identifier: Tom05ivier-commits-1.0
+  Copyright (c) 2026 Tomi vier
+  Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+  Replika mandiri untuk tujuan pembelajaran. Konten asli © PERURI & INA Digital.
+-->
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandbox Chip Merah Putih — Rancang chip pertamamu dari browser</title>
+  <meta name="description" content="Platform terbuka untuk belajar dan merancang chip digital langsung dari browser. Gratis dan mudah dipakai. Bagian dari Program Chip Merah Putih." />
+  <meta name="theme-color" content="#e14b4b" />
+  <meta name="author" content="PERURI & INA Digital — replika mandiri: IT Agenty" />
+  <meta name="generator" content="IT Agenty — Tom05ivier-commits-1.0" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://chip.peruri.co.id/" />
+
+  <!-- Favicon (salinan lokal dari situs asli) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/logomark.svg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Metadata sosial — klon dari situs asli, aset dibuat lokal -->
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sandbox Chip Merah Putih" />
+  <meta property="og:title" content="Sandbox Chip Merah Putih — Rancang chip pertamamu dari browser" />
+  <meta property="og:description" content="Platform terbuka untuk belajar dan merancang chip digital langsung dari browser. Gratis dan mudah dipakai. Bagian dari Program Chip Merah Putih." />
+  <meta property="og:url" content="https://chip.peruri.co.id/" />
+  <meta property="og:image" content="assets/favicon-32.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sandbox Chip Merah Putih — Rancang chip pertamamu dari browser" />
+  <meta name="twitter:description" content="Rancang chip pertamamu langsung dari browser. Gratis dan mudah dipakai." />
+  <meta name="twitter:image" content="assets/favicon-32.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip" href="#utama">Lewati ke konten utama</a>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#atas" aria-label="Sandbox Chip Merah Putih — beranda">
+      <span class="brand-logo" aria-hidden="true"><span></span><span></span></span>
+      <span><b>Sandbox Chip</b><em>Merah Putih</em></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">☰</button>
+    <nav id="menu" class="nav" aria-label="Navigasi utama">
+      <a href="simulator.html">Simulator</a>
+      <a href="#cara-kerja">Cara kerja</a>
+      <a href="#contoh-desain">Contoh desain</a>
+      <a href="#katalog">Katalog</a>
+      <a href="#tentang">Tentang</a>
+      <a class="btn btn-ghost btn-sm" href="#masuk">Masuk</a>
+      <a class="btn btn-primary btn-sm" href="simulator.html">Daftar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="utama">
+  <!-- HERO -->
+  <section class="hero" id="atas">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="badge">Tahap uji coba terbuka</span>
+        <h1>Rancang chip <span class="nowrap">pertamamu</span> langsung dari <span class="nowrap">browser.</span></h1>
+        <p class="lead">Desain, tes, dan simpan desain digitalmu dengan mudah — langsung dari browser.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="simulator.html">Coba sekarang <span aria-hidden="true">→</span></a>
+          <a class="btn btn-outline" href="#contoh-desain">Lihat contoh desain</a>
+        </div>
+        <p class="caption">Gratis. Mudah dipakai.</p>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Tampilan editor Sandbox dengan kode desain dan hasil pengujian gelombang">
+        <div class="window">
+          <div class="window-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="window-url">sandbox.chip.go.id</span></div>
+          <div class="window-body">
+            <div class="code">
+              <div class="code-title">desain.v</div>
+              <pre><span class="c">// adder 4-bit</span>
+<span class="k">module</span> adder(<span class="k">input</span> [3:0] a, b,
+              <span class="k">output</span> [4:0] sum);
+  <span class="k">assign</span> sum = a + b;
+<span class="k">endmodule</span></pre>
+            </div>
+            <div class="wave-panel">
+              <div class="wave-head"><span>Hasil pengujian</span><span class="status-ok">✓ Berhasil</span></div>
+              <svg class="wave" viewBox="0 0 320 96" preserveAspectRatio="none" aria-hidden="true">
+                <g stroke="#274060" stroke-width="1">
+                  <line x1="0" y1="24" x2="320" y2="24"/><line x1="0" y1="48" x2="320" y2="48"/>
+                  <line x1="0" y1="72" x2="320" y2="72"/><line x1="0" y1="96" x2="320" y2="96"/>
+                </g>
+                <g fill="none" stroke-width="2.5">
+                  <polyline stroke="#28a4a0" points="0,64 40,64 40,32 80,32 80,64 120,64 120,32 160,32 160,64 200,64 200,32 240,32 240,64 280,64 280,32 320,32"/>
+                  <polyline stroke="#e14b4b" points="0,80 40,80 40,56 80,56 80,80 120,80 120,56 160,56 160,80 200,80 200,56 240,56 240,80 280,80 280,56 320,56"/>
+                </g>
+              </svg>
+              <p class="wave-desc">a + b = sum · 3+2=5 · 5+4=9 · 9+6=15</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORIENTASI -->
+  <section class="section" id="keunggulan">
+    <div class="container">
+      <p class="eyebrow">Keunggulan utama</p>
+      <div class="feature-grid">
+        <article class="feature"><div class="ico" aria-hidden="true">✦</div><h3>Mudah digunakan</h3><p>Langsung buka di browser dan mulai merancang. Alurnya simpel, enak diikuti.</p></article>
+        <article class="feature"><div class="ico" aria-hidden="true">◈</div><h3>Gratis, aksesnya terbuka</h3><p>Bisa dipakai siapa saja — pelajar, pehobi, maupun yang sedang riset.</p></article>
+        <article class="feature"><div class="ico" aria-hidden="true">⌁</div><h3>Jalan di browser</h3><p>Tidak perlu memasang perangkat berat. Semua proses berjalan di server kami.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARA KERJA -->
+  <section class="section alt" id="cara-kerja">
+    <div class="container">
+      <p class="eyebrow">Cara kerja</p>
+      <h2 class="section-title">Tiga langkah, dan chip pertamamu sudah jalan.</h2>
+      <p class="section-sub">Ikuti tiga langkah mudah ini.</p>
+      <div class="steps">
+        <article class="step"><span class="num">1</span><h3>Pilih contoh</h3><p><strong>Mulai dari desain yang sudah jadi dan sudah teruji.</strong> Kamu tidak perlu memulai dari nol.</p></article>
+        <article class="step"><span class="num">2</span><h3>Ubah dan uji</h3><p><strong>Sesuaikan desainnya sesuai keinginanmu,</strong> lalu jalankan pengujian dan lihat hasilnya langsung di layar.</p></article>
+        <article class="step"><span class="num">3</span><h3>Simpan dan lanjutkan</h3><p><strong>Setiap perubahan tersimpan otomatis.</strong> Kalau desainnya sudah matang, kamu bisa ajukan untuk dibuat menjadi chip fisik.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTOH DESAIN -->
+  <section class="section" id="contoh-desain">
+    <div class="container">
+      <p class="eyebrow">Contoh desain</p>
+      <h2 class="section-title">Coba contoh desain yang sudah jadi.</h2>
+      <p class="section-sub">Rangkaian yang bisa langsung kamu jalankan dan pelajari.</p>
+      <div class="cards">
+        <article class="card"><span class="tag">Pemula</span><h3>Adder 4-bit</h3><p>Menjumlahkan dua bilangan biner. Dasar dari setiap kalkulator dan prosesor.</p><a class="link" href="simulator.html">Coba desain ini →</a></article>
+        <article class="card"><span class="tag">Pemula</span><h3>Counter</h3><p>Menaik setiap detak waktu, seperti penghitung mundur.</p><a class="link" href="simulator.html">Coba desain ini →</a></article>
+        <article class="card"><span class="tag">Menengah</span><h3>Traffic light</h3><p>Mengatur lampu merah, kuning, dan hijau secara berurutan.</p><a class="link" href="simulator.html">Coba desain ini →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNTUK SIAPA -->
+  <section class="section alt" id="untuk-siapa">
+    <div class="container">
+      <p class="eyebrow">Untuk siapa</p>
+      <h2 class="section-title">Dua cara memakai Sandbox.</h2>
+      <p class="section-sub">Baik yang baru belajar maupun yang sedang praktikum, titik awalnya sama.</p>
+      <div class="cards two">
+        <article class="card"><h3>Pelajar, mahasiswa, dan pehobi</h3><p><strong>Belajar buat desain chip dari nol.</strong> Ada contoh siap pakai, panduan langkah demi langkah, dan asisten AI yang membantu saat kamu buat desain.</p><a class="link" href="#panduan">Buka panduan pemula →</a></article>
+        <article class="card"><h3>Industri dan peneliti</h3><p><strong>Eksperimen lebih cepat dengan riwayat perubahan yang rapi,</strong> plus hasil yang bisa diunduh dan diulang. Berbasis Git.</p><a class="link" href="https://chip.peruri.co.id/datasheet.pdf">Baca datasheet →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- YANG KAMU DAPATKAN -->
+  <section class="section" id="manfaat">
+    <div class="container">
+      <p class="eyebrow">Manfaat</p>
+      <h2 class="section-title">Yang kamu dapatkan.</h2>
+      <p class="section-sub">Empat hal yang membuat proses merancang chip jadi lebih enak dijalani sendiri.</p>
+      <div class="feature-grid four">
+        <article class="feature"><div class="ico" aria-hidden="true">✧</div><h3>Bantuan AI saat desain</h3><p><strong>Minta saran,</strong> cari kesalahan, dan percepat proses buat desain lewat asisten AI untuk Verilog.</p></article>
+        <article class="feature"><div class="ico" aria-hidden="true">∿</div><h3>Uji langsung di browser</h3><p><strong>Lihat hasilnya dalam hitungan detik</strong> tanpa perangkat tambahan. Simulasi dan bentuk gelombang.</p></article>
+        <article class="feature"><div class="ico" aria-hidden="true">⟲</div><h3>Riwayat perubahan</h3><p><strong>Setiap versi tersimpan rapi</strong> dan bisa kerja sama dengan tim. Berbasis Git.</p></article>
+        <article class="feature"><div class="ico" aria-hidden="true">◇</div><h3>Jalur menuju chip fisik</h3><p><strong>Desain yang lolos pengujian bisa diteruskan</strong> ke proses pembuatan chip sungguhan. Format standar industri.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- KATALOG -->
+  <section class="section alt" id="katalog">
+    <div class="container">
+      <p class="eyebrow">Katalog referensi</p>
+      <h2 class="section-title">Belajar dari desain yang sudah jadi.</h2>
+      <p class="section-sub">Kumpulan desain chip sumber terbuka. Semuanya sudah teruji — baca, pelajari, lalu jadikan titik awal desainmu.</p>
+      <div class="filters" role="group" aria-label="Saring kategori">
+        <button class="filter active" type="button" data-filter="semua">Semua</button>
+        <button class="filter" type="button" data-filter="keamanan">Keamanan</button>
+        <button class="filter" type="button" data-filter="komputasi">Komputasi</button>
+        <button class="filter" type="button" data-filter="antarmuka">Antarmuka</button>
+        <button class="filter" type="button" data-filter="hiburan">Hiburan</button>
+      </div>
+      <div class="cards catalog" id="katalog-cards">
+        <article class="card" data-cat="keamanan"><span class="tag">Kriptografi</span><h3>ECC Test</h3><p>Eksperimen kurva eliptik untuk keamanan chip.</p><div class="tags"><span>Keamanan</span><span>Crypto</span></div><a class="link" href="https://github.com/seanyen0/tt07-makerchip-template">Lihat di GitHub →</a></article>
+        <article class="card" data-cat="keamanan"><span class="tag">Keamanan</span><h3>RO-based PUF</h3><p>Penanda unik pada setiap chip, mirip sidik jari, buat keperluan keamanan.</p><div class="tags"><span>PUF</span><span>Keamanan</span></div><a class="link" href="https://github.com/seanyen0/tt07-makerchip-template">Lihat di GitHub →</a></article>
+        <article class="card" data-cat="antarmuka"><span class="tag">Antarmuka</span><h3>SerDes</h3><p>Link data berkecepatan tinggi — teknologi fundamental untuk interface chip.</p><div class="tags"><span>SerDes</span><span>Kecepatan Tinggi</span></div><a class="link" href="https://github.com/seanyen0/tt07-makerchip-template">Lihat di GitHub →</a></article>
+        <article class="card" data-cat="komputasi"><span class="tag">Komputasi</span><h3>FP-8 MAC Module</h3><p>Floating Point 8-bit Multiply-Accumulate untuk komputasi ringan.</p><div class="tags"><span>Floating Point</span><span>DSP</span></div><a class="link" href="https://github.com/seanyen0/tt07-makerchip-template">Lihat di GitHub →</a></article>
+        <article class="card" data-cat="antarmuka"><span class="tag">Mixed-signal</span><h3>DAC Comparators</h3><p>DAC all-digital dengan analog comparators — desain mixed-signal inovatif.</p><div class="tags"><span>DAC</span><span>Comparator</span></div><a class="link" href="https://github.com/seanyen0/tt07-makerchip-template">Lihat di GitHub →</a></article>
+        <article class="card" data-cat="komputasi"><span class="tag">Vision</span><h3>Gaussian Blur</h3><p>Eksperimen pemrosesan citra dasar di atas chip.</p><div class="tags"><span>Vision</span><span>Citra</span></div><a class="link" href="https://github.com/ChipUSM/tt07-wokwi-gaussian-blur">Lihat di GitHub →</a></article>
+        <article class="card" data-cat="hiburan"><span class="tag">Hiburan</span><h3>Screensaver</h3><p>Animasi kecil yang dijalankan langsung oleh logika digital.</p><div class="tags"><span>Animasi</span><span>Display</span></div><a class="link" href="https://github.com/seanyen0/tt07-makerchip-template">Lihat di GitHub →</a></article>
+      </div>
+      <div class="catalog-links">
+        <a class="btn btn-outline btn-sm" href="https://chip.peruri.co.id/datasheet.pdf">Unduh datasheet (PDF)</a>
+        <a class="btn btn-ghost btn-sm" href="https://github.com/seanyen0/tt07-makerchip-template">Lihat di GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TENTANG & FAQ -->
+  <section class="section" id="tentang">
+    <div class="container">
+      <p class="eyebrow">Tentang</p>
+      <h2 class="section-title">Bagian dari Program Chip Merah Putih.</h2>
+      <p class="section-sub">Tujuannya sederhana: membuka jalan bagi siapa pun di Indonesia untuk mulai merancang chip, tanpa harus punya laboratorium atau perangkat mahal.</p>
+      <p class="lead-narrow">Sandbox Chip Merah Putih adalah platform belajar dan merancang chip digital yang dikembangkan PERURI bersama INA Digital.</p>
+      <div class="faq" id="faq">
+        <details><summary>Saya tidak bisa coding. Apakah tetap bisa ikut?</summary><p>Bisa. Kamu bisa mulai dari contoh desain yang sudah jadi, ubah sedikit demi sedikit, lalu lihat hasilnya langsung. Ada panduan langkah demi langkah dan asisten AI yang membantu.</p></details>
+        <details><summary>Apa itu Verilog?</summary><p>Verilog adalah bahasa pemrograman untuk menjelaskan cara kerja sebuah chip. Alih-alih menggambar rangkaian satu per satu, kamu menulis apa yang harus dilakukan chip, lalu komputer yang menyusun rangkaiannya.</p></details>
+        <details><summary>Apakah butuh komputer atau perangkat khusus?</summary><p>Tidak. Cukup komputer atau laptop dengan browser. Semua proses berat dijalankan di server kami.</p></details>
+        <details><summary>Apakah desainku benar-benar bisa jadi chip fisik?</summary><p>Jalurnya ada. Desain yang lolos pengujian bisa diteruskan ke proses pembuatan chip di pabrik. Selama tahap uji coba, jumlah desain yang bisa diproduksi masih terbatas dan melalui seleksi.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA AKHIR -->
+  <section class="cta-final" id="simulasi">
+    <div class="container cta-inner">
+      <div>
+        <h2>Chip pertamamu dimulai dari satu klik.</h2>
+        <p>Bagian dari Program Chip Merah Putih.</p>
+        <p class="muted">Buka salah satu contoh desain, ubah sedikit, lalu jalankan. Mudah, kan?</p>
+      </div>
+      <a class="btn btn-light" href="#contoh-desain">Coba sekarang →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p><b>Sandbox Chip Merah Putih</b> — replika mandiri untuk pembelajaran.</p>
+    <p class="muted">Konten asli © PERURI &amp; INA Digital. Dibangun ulang tanpa CDN oleh IT Agenty — Tom05ivier-commits v1.0.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

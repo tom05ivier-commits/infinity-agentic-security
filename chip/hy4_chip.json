@@ -1,0 +1,36 @@
+{
+  "name": "hy4-accelerator",
+  "model": "opencode/hy4-flash-free",
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "description": "Inti akselerator hy4: skor berbobot empat fitur, kuantisasi dua bit, dan modul top-level.",
+  "modules": [
+    {
+      "name": "hy4_dot4",
+      "rtl": "rtl/hy4_dot4.v",
+      "inputs": ["a0[1:0]", "a1[1:0]", "a2[1:0]", "a3[1:0]"],
+      "output": "y[3:0]",
+      "function": "y = (a0 + 2*a1 + 3*a2 + 4*a3) mod 16"
+    },
+    {
+      "name": "hy4_quant",
+      "rtl": "rtl/hy4_quant.v",
+      "inputs": ["score[3:0]"],
+      "output": "level[1:0]",
+      "function": "level = score >> 2"
+    },
+    {
+      "name": "hy4_top",
+      "rtl": "rtl/hy4_top.v",
+      "inputs": ["a0[1:0]", "a1[1:0]", "a2[1:0]", "a3[1:0]"],
+      "output": "level[1:0]",
+      "function": "level = ((a0 + 2*a1 + 3*a2 + 4*a3) mod 16) >> 2"
+    }
+  ],
+  "verification": {
+    "reference_model": "chip/reference.py",
+    "cli": "python3 chip/chip_cli.py verify",
+    "report": "chip/reports/chip_verification.json",
+    "browser": "/chip/simulator.html"
+  }
+}
