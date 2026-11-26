@@ -1,0 +1,35 @@
+{
+  "spdx": "SPDX-License-Identifier: Tom05ivier-commits-1.0",
+  "copyright": "Copyright (c) 2026 Tomi vier",
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "version": 1,
+  "schema": "tom05-rights-balance/1",
+  "note": "Latar keseimbangan antara kepentingan operasional dan hak. Hak tidak dapat ditimpa oleh kepentingan; izin selalu terbatas, diaudit, dan dapat dicabut.",
+  "kepentingan": [
+    "ketersediaan layanan supervisor",
+    "otomasi rutin yang idempoten",
+    "keandalan verifikasi dan pelaporan",
+    "pemanfaatan data bersama workspace"
+  ],
+  "hak": [
+    "privasi data pribadi",
+    "lisensi dan atribusi pemilik",
+    "batas izin tertulis yang dapat dicabut",
+    "penolakan kategori dilarang",
+    "jejak audit atas setiap aksi"
+  ],
+  "batas": {
+    "ttl_maks_detik": 300,
+    "izin_tanpa_batas": "ditolak",
+    "kategori_dilarang": ["data-theft", "unlimited-auth", "third-party-license-removal", "external-network-action"],
+    "audit": true,
+    "pemilik": "Tomi vier"
+  },
+  "prioritas": "hak_mendahului_bila_bertentangan",
+  "batasan": [
+    "Kepentingan operasional tidak pernah mengubah lisensi atau menimpa hak pemilik.",
+    "Izin otomatis hanya untuk kategori rutin dan TTL maksimal 300 detik.",
+    "Keputusan ini adalah kebijakan perangkat lunak, bukan nasihat hukum."
+  ]
+}

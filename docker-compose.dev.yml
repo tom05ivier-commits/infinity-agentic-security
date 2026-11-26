@@ -1,0 +1,68 @@
+# SPDX-License-Identifier: Tom05ivier-commits-1.0
+# Copyright (c) 2026 Tomi vier
+# Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+#
+# Mode pengembangan AMAN: tanpa CAP_NET_ADMIN, bridge network, firewall tetap
+# userspace-policy. Cocok untuk menguji dashboard & latihan tanpa izin kernel.
+
+services:
+  infinity-dev:
+    build: .
+    image: infinity-security:1.0
+    container_name: infinity-security-dev
+    restart: unless-stopped
+    init: true
+
+    # Container dasar berperan sebagai manager; tom05 bergabung di jaringan ini.
+    networks:
+      agenty-net:
+        aliases:
+          - infinity
+          - manager
+
+    ports:
+      - "127.0.0.1:8765:8765"
+      - "127.0.0.1:8766:8766"
+      - "127.0.0.1:8767:8767"
+      - "127.0.0.1:8768:8768"
+      - "127.0.0.1:8769:8769"
+      - "127.0.0.1:8770:8770"
+
+    environment:
+      AGENTY_WORKSPACE: /workspace
+      AGENTY_BIND_HOST: 0.0.0.0
+      BIND_HOST: 0.0.0.0
+      BIND_PORT: "8765"
+      AGENTY_INTERVAL: "5"
+      ENABLE_KERNEL_FIREWALL: "0"
+
+    volumes:
+      - reports-dev:/workspace/security/reports
+      - logs-dev:/workspace/security/logs
+      - quarantine-dev:/workspace/security/quarantine
+      - system-reports-dev:/workspace/system/reports
+
+    mem_limit: 256m
+    cpus: 0.5
+
+    healthcheck:
+      test:
+        - CMD
+        - python3
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/api/health', timeout=3)"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+    command: ["supervise"]
+
+volumes:
+  reports-dev:
+  logs-dev:
+  quarantine-dev:
+  system-reports-dev:
+
+networks:
+  agenty-net:
+    name: ${AGENTY_NETWORK:-agenty-net}

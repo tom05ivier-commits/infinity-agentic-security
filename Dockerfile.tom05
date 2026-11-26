@@ -1,0 +1,83 @@
+# SPDX-License-Identifier: Tom05ivier-commits-1.0
+# Copyright (c) 2026 Tomi vier
+# Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+#
+# Image purpose-built untuk tom05: lebih kecil, tanpa klon pihak ketiga,
+# berjalan sebagai user non-root, rootfs read-only, dan punya healthcheck.
+# Tidak memerlukan CAP_NET_ADMIN — provider hanya listen di loopback.
+#
+# Bangun:  docker build -f Dockerfile.tom05 -t tom05-inference:1.0 .
+# Jalankan: docker compose -f docker-compose.tom05.yml up -d --build
+
+# syntax=docker/dockerfile:1
+
+# ── Stage 1: susun bundle runtime (hanya artefak tom05) ────────────────────
+FROM python:3.12-slim AS builder
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONIOENCODING=utf-8
+
+WORKDIR /bundle
+COPY tom05 hy4 LICENSE README.md ./
+COPY config/tom05-models.json ./config/
+COPY system/tom05_provider.py ./system/
+COPY chip/chip_cli.py chip/reference.py chip/hy4_chip.json ./chip/
+COPY chip/rtl ./chip/rtl/
+COPY chip/reports ./chip/reports/
+COPY chip/synth ./chip/synth/
+COPY chip/tb ./chip/tb/
+COPY tools/apikey_demo.py ./tools/
+COPY scripts/tom05_container_entrypoint.sh scripts/tom05_container_verify.sh ./scripts/
+
+RUN chmod +x tom05 hy4 \
+      scripts/tom05_container_entrypoint.sh \
+      scripts/tom05_container_verify.sh
+
+# ── Stage 2: verifikasi saat build (gagal = image tidak jadi) ──────────────
+FROM builder AS verify
+
+RUN python3 -c "import json,pathlib; d=json.loads(pathlib.Path('config/tom05-models.json').read_text()); assert d['default']=='tom05/tom05-flash-free'; assert d['aliases'][0]['target']=='tom05/tom05-flash-free'" \
+ && python3 chip/chip_cli.py soc
+
+# ── Stage 3: runtime paling minimal ────────────────────────────────────────
+FROM python:3.12-slim AS runtime
+
+LABEL org.opencontainers.image.title="tom05-inference" \
+      org.opencontainers.image.description="Container hardened untuk Tom05 flash Free" \
+      org.opencontainers.image.licenses="Tom05ivier-commits-1.0" \
+      org.opencontainers.image.authors="Tomi vier"
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONIOENCODING=utf-8 \
+    AGENTY_WORKSPACE=/workspace \
+    AGENTY_TOM05_PORT=8772 \
+    TOM05_PROVIDER_PORT=8772 \
+    TOM05_UPSTREAM_MODEL=hy4-flash-free \
+    TOM05_CTL=100000000 \
+    TOM05_DISPLAY_NAME="Tom05 Landscape Display" \
+    TOM05_DISPLAY_ORIENTATION=landscape \
+    TOM05_GPU_BACKENDS=panfrost,mali \
+    TOM05_GPU_ACCEL=declared-manual \
+    TOM05_MANAGER_HOST=infinity
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends tini ca-certificates \
+ && rm -rf /var/lib/apt/lists/* \
+ && groupadd --gid 10001 tom05 \
+ && useradd --uid 10001 --gid tom05 --create-home --shell /usr/sbin/nologin tom05
+
+WORKDIR /workspace
+COPY --from=builder --chown=tom05:tom05 /bundle/ /workspace/
+
+USER 10001:10001
+
+# Port provider tom05 (bukan variabel `PORT`).
+EXPOSE 8772
+
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 --start-period=5s \
+  CMD python3 -c "import os,urllib.request; urllib.request.urlopen('http://127.0.0.1:' + os.environ.get('TOM05_PROVIDER_PORT','8772') + '/health', timeout=3)"
+
+ENTRYPOINT ["/usr/bin/tini", "--", "./scripts/tom05_container_entrypoint.sh"]
+CMD ["serve"]

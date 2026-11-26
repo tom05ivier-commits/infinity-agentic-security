@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.log
+security/reports/
+security/logs/
+security/quarantine/
+system/reports/
+credentials/
+credentials/.env
+.env
+.env.*
+! .env.example
+publish/
+src/
+opencode-src/

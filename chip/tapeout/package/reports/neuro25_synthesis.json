@@ -1,0 +1,9 @@
+{
+  "module": "tom05_neuro25",
+  "tool": "yosys",
+  "status": "PASS",
+  "cells": 13,
+  "gate_netlist": true,
+  "json_netlist": true,
+  "reasons": []
+}

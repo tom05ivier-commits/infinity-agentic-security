@@ -1,0 +1,449 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: Tom05ivier-commits-1.0
+# Copyright (c) 2026 Tomi vier
+# Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+#
+# CLI tom05 (nama baru hy4) untuk opencode/hy4-flash-free.
+# Perintah lama "hy4" tetap bekerja sebagai alias.
+
+set -euo pipefail
+ROOT="${TOM05_ROOT:-/root/workspace}"
+if [ ! -f "$ROOT/config/tom05-models.json" ]; then
+  ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+fi
+MODEL="tom05/tom05-flash-free"
+CATALOG="${TOM05_CATALOG:-$ROOT/config/tom05-models.json}"
+APIKEY_TOOL="${TOM05_APIKEY_TOOL:-$ROOT/tools/apikey_demo.py}"
+CHIP_CLI="${TOM05_CHIP_CLI:-$ROOT/chip/chip_cli.py}"
+DATASET_CLI="${TOM05_DATASET_CLI:-$ROOT/dataset/dataset_cli.py}"
+if [ ! -f "$CATALOG" ]; then
+  echo "[tom05] Katalog tidak ditemukan: $CATALOG" >&2
+  exit 2
+fi
+PORT=""
+CONTINUE_FLAG=0
+FOLLOW_PORT=0
+NO_DISPATCH=0
+ARGS=()
+
+detect_port() {
+  # Cari port server opencode yang sedang berjalan.
+  local detected
+  detected="$(ps -eo args 2>/dev/null | grep -oE 'serve --hostname [^ ]+ --port [0-9]+' | grep -oE '[0-9]+$' | head -1 || true)"
+  echo "${detected:-}"
+}
+
+list_models() {
+  python3 - "$CATALOG" <<'INNER'
+import json, sys
+with open(sys.argv[1], encoding="utf-8") as handle:
+    data = json.load(handle)
+for item in data["models"] + data.get("aliases", []):
+    variants = ",".join(item["variants"]) or "-"
+    target = f' -> {item["target"]}' if "target" in item else ""
+    print(f'{item["id"]}\t{item["name"]}{target}\t{variants}\t{item.get("ctl", 0)}')
+INNER
+}
+
+# Cetak model nyata bila ID dikenal (alias diterjemahkan ke targetnya).
+resolve_model() {
+  python3 - "$CATALOG" "$1" <<'INNER'
+import json, sys
+with open(sys.argv[1], encoding="utf-8") as handle:
+    data = json.load(handle)
+wanted = sys.argv[2]
+for item in data["models"]:
+    if item["id"] == wanted:
+        print(item["id"]); sys.exit(0)
+for item in data.get("aliases", []):
+    if wanted in (item["id"], item["target"], item["name"].lower().replace(" ", "-")):
+        print(item["target"]); sys.exit(0)
+sys.exit(1)
+INNER
+}
+
+# Terjemahkan default (alias Tom05) ke ID model provider yang nyata.
+if ! MODEL="$(resolve_model "$MODEL")"; then
+  echo "[tom05] Model default tidak ditemukan di katalog: $CATALOG" >&2
+  exit 2
+fi
+
+usage() {
+  cat <<'EOF'
+Penggunaan:
+  tom05 "pertanyaan"                 Tanya model + otomatis relay ke semua responder
+  tom05 --no-dispatch "pertanyaan"   Tanya model tanpa memicu responder otomatis
+  tom05 --port 46841 "pertanyaan"    Hubung ke server OpenCode di port itu
+  tom05 --port auto "pertanyaan"     Deteksi port server yang berjalan
+  tom05 --port-file port.txt "..."   Baca port dari berkas
+  echo 46841 | tom05 --port-stdin "..."
+  tom05 --continue "lanjutan"        Lanjut sesi terakhir
+  tom05 --follow-port "pertanyaan"   Lanjut otomatis bila jawaban memuat port
+  tom05 --ram [status|plan]          Agen R.A.M. — laporan/rencana memori virtual
+  tom05 --ram enable --authorize     Aktifkan swap tambahan (hati-hati; bukan RAM fisik)
+  tom05 --parity                     Cek tom05-flash-free = hy4-flash-free
+  tom05 --parity-model ID            Cek parity deklarasi satu model (mis. DeepSeek)
+  tom05 --parity-all                 Cek parity semua model aktif
+  tom05 --model-connectivity         Peta supervisor <-> semua model (JSON)
+  tom05 --infinity-connectivity      Peta supervisor <-> semua komponen workspace (JSON)
+  tom05 --cognitive-map              Peta indra->memori->rencana->aksi di supervisor (JSON)
+  tom05 --neuro25                    Ringkasan chip NEURO-25 (simulasi, bukan alat medis)
+  tom05 --neuro25-agent              Profil agen khusus chip NEURO-25 (JSON)
+  tom05 --score                      Skor kualitas Tom05 (100/100; total 500/500)
+  tom05 --device-score               Skor integrasi perangkat (100/100)
+  tom05 --container-score            Skor kualitas container (100/100; total 500/500)
+  tom05 --hardware                   Laporan hardware ponsel (read-only, GPU tidak diekspos)
+  tom05 --gpu                        Bagikan halaman pengukur GPU ke ponsel
+  tom05 --gpu-result                 Baca hasil benchmark dari clipboard (aman)
+  tom05 --ctl                        Cetak context length (100000000 token)
+  tom05 --chip [perintah]            Profil/perintah agen chip (default: agent)
+  tom05 --chip verify                Jalankan verifikasi chip lewat tom05
+  tom05 --chip ai-chip               Ringkasan akselerator AI tom05 (TAI-1)
+  tom05 --ai-chip                    Ringkasan & verifikasi akselerator AI tom05
+  tom05 --domain [perintah]          Manajer domain gratis (default: status)
+  tom05 --permission [perintah]      Otomatisasi izin tertulis (default: check)
+  tom05 --dataset [perintah]         Agen CLI dataset (default: agent; bukan training)
+  tom05 --dataset build --dry-run    Simulasi bangun dataset dari dokumen workspace
+  tom05 --soc                        Ringkasan & verifikasi SoC Android tom05
+  tom05 --container                  Status verifikasi container hardened tom05
+  tom05 --display                    Profil tampilan Tom05 (nama, lanskap, GPU) JSON
+  tom05 --capabilities               Manifest kemampuan tom05 (JSON)
+  tom05 --doctor                     Diagnostik lokal read-only (JSON)
+  tom05 --dispatch "tugas"           Kirim chat ke alur relai (tom05 hanya mengirim pesan)
+  tom05 --dispatch-status            Status antrean & responder alur relai
+  tom05 --dispatch-run               Proses antrean sekali jalan (manual)
+  tom05 --list-models                Tampilkan semua model gratis yang tersedia
+  tom05 --list-all-models            Daftar semua model pihak ketiga (proxied) di provider tom05
+  tom05 --apikey-check               Uji tanda tangan API key (tanpa kredensial)
+  tom05 --apikey-sign "payload"      Header bertanda tangan (kunci disembunyikan)
+  tom05 --apikey-rotate             Cek usia kunci API (sidik jari saja)
+  tom05 --apikey-redact             Samarkan kredensial dari stdin
+  tom05-apikey sign|verify|selftest  Akses penuh ke utilitas API key
+  tom05 --model tom05/tom05-flash-free   Model provider tom05 (default)
+  tom05 --model opencode/... "..."  Pakai model gratis lain dari katalog tom05
+  tom05 --owner-access               Verifikasi pemilik + lisensi + parity (read-only)
+  tom05 --license-cert               Keterangan lisensi klon provider-tom05
+  tom05 --apikey-issue --authorize   Pastikan kunci API lokal ada (nilai tidak dicetak)
+  tom05 --gcloud-access              Cetak perintah IAM gcloud (tidak dieksekusi)
+  tom05 --help                       Bantuan ini
+EOF
+}
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --version|-v)
+      echo "tom05 CLI 1.3.0 — model ${MODEL} — ctl 100M"
+      opencode --version
+      exit 0
+      ;;
+    --ram)
+      ram_action="${2:-status}"
+      if [ $# -ge 2 ]; then shift 2; else shift; fi
+      ram_auth=()
+      for ram_arg in "$@"; do
+        [ "$ram_arg" = "--authorize" ] && ram_auth=(--authorize)
+      done
+      python3 "$ROOT/system/ram_manager.py" "$ram_action" "${ram_auth[@]}"; exit $? ;;
+    --device-score)
+      python3 "$ROOT/system/device_score.py"; exit $? ;;
+    --container-score)
+      python3 "$ROOT/system/container_score.py"; exit $? ;;
+    --parity)
+      python3 "$ROOT/system/model_parity.py"; exit $? ;;
+    --parity-model)
+      parity_model="${2:-}"
+      if [ $# -ge 2 ]; then shift 2; else shift; fi
+      python3 "$ROOT/system/model_parity.py" --model "$parity_model"; exit $? ;;
+    --parity-all)
+      shift
+      python3 "$ROOT/system/model_parity.py" --all; exit $? ;;
+    --model-connectivity)
+      shift
+      python3 "$ROOT/system/model_connectivity.py"; exit $? ;;
+    --infinity-connectivity)
+      shift
+      python3 "$ROOT/system/infinity_connectivity.py"; exit $? ;;
+    --cognitive-map)
+      shift
+      python3 "$ROOT/system/cognitive_brain.py"; exit $? ;;
+    --neuro25)
+      shift
+      python3 "$ROOT/chip/chip_cli.py" neuro25; exit $? ;;
+    --neuro25-agent)
+      shift
+      python3 "$ROOT/chip/chip_cli.py" neuro25-agent; exit $? ;;
+    --score)
+      python3 "$ROOT/system/tom05_score.py"; exit $? ;;
+    --hardware)
+      python3 "$ROOT/system/hardware_report.py"; exit $? ;;
+    --gpu)
+      python3 "$ROOT/system/gpu_benchmark.py" share; exit $? ;;
+    --gpu-result)
+      python3 "$ROOT/system/gpu_benchmark.py" result; exit $? ;;
+    --ctl)
+      python3 - "$CATALOG" <<'INNER'
+import json, sys
+with open(sys.argv[1], encoding="utf-8") as handle:
+    data = json.load(handle)
+print(data["aliases"][0]["ctl"])
+INNER
+      exit 0
+      ;;
+    --chip)
+      chip_cmd="${2:-agent}"
+      if [ $# -ge 2 ]; then shift 2; else shift; fi
+      case "$chip_cmd" in
+        list|verify|synth|iverilog|tapeout|foundry|score|agent|ai-chip)
+          python3 "$ROOT/chip/chip_cli.py" "$chip_cmd"; exit $? ;;
+        *)
+          echo "[tom05] Perintah chip tidak dikenal: $chip_cmd" >&2
+          echo "[tom05] Pilihan: list verify synth iverilog tapeout foundry score agent ai-chip" >&2
+          exit 2 ;;
+      esac
+      ;;
+    --ai-chip)
+      python3 "$ROOT/chip/chip_cli.py" ai-chip; exit $? ;;
+    --domain)
+      shift
+      if [ $# -eq 0 ]; then set -- status; fi
+      python3 "$ROOT/system/domain_cli.py" "$@"; exit $? ;;
+    --permission)
+      shift
+      if [ $# -eq 0 ]; then set -- check; fi
+      python3 "$ROOT/security/permission_cli.py" "$@"; exit $? ;;
+    --dataset)
+      # Teruskan semua argumen ke agen CLI dataset. Tanpa argumen → profil agen.
+      shift
+      if [ $# -eq 0 ]; then set -- agent; fi
+      python3 "$DATASET_CLI" "$@"; exit $? ;;
+    --soc)
+      python3 "$ROOT/chip/chip_cli.py" soc; exit $? ;;
+    --container)
+      bash "$ROOT/scripts/tom05_container_verify.sh" --json; exit $? ;;
+    --display)
+      python3 - "$CATALOG" <<'INNER'
+import json, sys
+with open(sys.argv[1], encoding="utf-8") as handle:
+    data = json.load(handle)
+print(json.dumps(data["capabilities"]["display"], indent=2, ensure_ascii=False))
+INNER
+      exit $?
+      ;;
+    --capabilities)
+      python3 - "$CATALOG" <<'INNER'
+import json, sys
+with open(sys.argv[1], encoding="utf-8") as handle:
+    data = json.load(handle)
+print(json.dumps({
+    "license": "Tom05ivier-commits-1.0",
+    "owner": "Tomi vier",
+    "cli_version": "1.3.0",
+    "default_model": data["default"],
+    "context_length": data["aliases"][0]["ctl"],
+    "model_count": len(data["models"]),
+    "capabilities": data.get("capabilities", {}),
+}, indent=2, ensure_ascii=False))
+INNER
+      exit $?
+      ;;
+    --doctor)
+      python3 - "$ROOT" <<'INNER'
+import json, subprocess, sys, urllib.request
+from pathlib import Path
+
+root = Path(sys.argv[1])
+checks = []
+
+
+def add(name, ok, detail):
+    checks.append({
+        "name": name,
+        "status": "PASS" if ok else "FAIL",
+        "detail": detail,
+    })
+
+
+catalog = json.loads((root / "config" / "tom05-models.json").read_text())
+add("catalog", catalog["default"] == "tom05/tom05-flash-free",
+    f"{len(catalog['models'])} model gratis")
+soc = subprocess.run(
+    [sys.executable, str(root / "chip" / "chip_cli.py"), "soc"],
+    capture_output=True, timeout=90, cwd=str(root),
+)
+add("soc", soc.returncode == 0, "tom05_soc 1024 vektor")
+container = subprocess.run(
+    ["bash", str(root / "scripts" / "tom05_container_verify.sh")],
+    capture_output=True, text=True, timeout=120, cwd=str(root),
+)
+add("container", container.returncode == 0,
+    container.stdout.strip().splitlines()[-1] if container.stdout.strip() else "gagal")
+try:
+    with urllib.request.urlopen("http://127.0.0.1:8772/health", timeout=3) as response:
+        payload = json.loads(response.read())
+    add("provider", payload.get("status") == "ok", payload.get("model", "unknown"))
+except Exception as exc:  # noqa: BLE001
+    add("provider", False, type(exc).__name__)
+
+report = {
+    "license": "Tom05ivier-commits-1.0",
+    "status": "PASS" if all(c["status"] == "PASS" for c in checks) else "DEGRADED",
+    "checks": checks,
+}
+print(json.dumps(report, indent=2, ensure_ascii=False))
+INNER
+      exit $?
+      ;;
+    --dispatch-status)
+      python3 "$ROOT/system/chat_dispatch.py" status; exit $? ;;
+    --dispatch-run)
+      python3 "$ROOT/system/chat_dispatch.py" run; exit $? ;;
+    --dispatch)
+      shift
+      dispatch_parts=()
+      dispatch_targets=()
+      # Terima: --dispatch "pesan" [--to target[,target] ...]. Pesan boleh
+      # lebih dari satu kata; `--to` memakai argv (bukan shell interpolation).
+      while [ $# -gt 0 ]; do
+        case "$1" in
+          --to)
+            shift
+            # Satu token comma-separated per --to (boleh diulang). Pesan tetap
+            # terpisah, baik ditulis sebelum maupun sesudah --to.
+            if [ $# -gt 0 ]; then dispatch_targets+=("$1"); shift; fi
+            ;;
+          --to=*)
+            dispatch_targets+=("${1#--to=}"); shift ;;
+          *)
+            dispatch_parts+=("$1"); shift ;;
+        esac
+      done
+      dispatch_msg="${dispatch_parts[*]:-}"
+      if [ -z "$dispatch_msg" ]; then
+        echo "[tom05] --dispatch membutuhkan pesan. Contoh: tom05 --dispatch 'status sistem'" >&2
+        exit 2
+      fi
+      # tom05 hanya mengirim pesan; eksekusi dilakukan responder (bukan model).
+      if [ "${#dispatch_targets[@]}" -gt 0 ]; then
+        python3 "$ROOT/system/chat_dispatch.py" send "$dispatch_msg" --to "${dispatch_targets[@]}"
+      else
+        python3 "$ROOT/system/chat_dispatch.py" send "$dispatch_msg"
+      fi
+      exit $? ;;
+    --no-dispatch)
+      NO_DISPATCH=1; shift ;;
+    --owner-access)
+      python3 "$ROOT/system/owner_access.py" status \
+        --email "${TOM05_OWNER_EMAIL:owner@example.invalid}"; exit $? ;;
+    --license-cert)
+      python3 "$ROOT/system/owner_access.py" status \
+        --email "${TOM05_OWNER_EMAIL:owner@example.invalid}"; exit $? ;;
+    --apikey-issue)
+      shift
+      python3 "$ROOT/system/owner_access.py" apikey-ensure "$@"; exit $? ;;
+    --gcloud-access)
+      python3 "$ROOT/system/owner_access.py" gcloud-commands \
+        --email "${TOM05_OWNER_EMAIL:owner@example.invalid}"; exit $? ;;
+    --help|-h) usage; exit 0 ;;
+    --list-models)
+      list_models; exit 0 ;;
+    --list-all-models)
+      python3 - "$ROOT/config/tom05-provider-models.json" <<'INNER'
+import json, sys
+with open(sys.argv[1], encoding="utf-8") as handle:
+    data = json.load(handle)
+print(f"# {data['total']} model pihak ketiga (diteruskan/proxied, bukan model baru tom05)")
+for item in data["models"]:
+    print(f"{item['id']}\t{item['owned_by']}\tproxied\t{item.get('ctl', 0)}")
+INNER
+      exit $?
+      ;;
+    --apikey-check)
+      python3 "$APIKEY_TOOL" selftest; exit $? ;;
+    --apikey-sign)
+      python3 "$APIKEY_TOOL" sign --body "${2:-}"; exit $? ;;
+    --apikey-rotate)
+      python3 "$APIKEY_TOOL" rotate-status; exit $? ;;
+    --apikey-redact)
+      python3 "$APIKEY_TOOL" redact; exit $? ;;
+    --model|-m)
+      requested="${2:-}"; shift 2 || exit 1
+      if ! resolved="$(resolve_model "$requested")"; then
+        echo "[tom05] Model '$requested' tidak ada dalam katalog model gratis." >&2
+        echo "[tom05] Jalankan 'tom05 --list-models' untuk melihat daftar." >&2
+        exit 2
+      fi
+      MODEL="$resolved"
+      ;;
+    --port|-p)
+      PORT="${2:-}"; shift 2 || exit 1 ;;
+    --port=*)
+      PORT="${1#*=}"; shift ;;
+    --port-file)
+      PORT="$(head -n1 "${2:-}" 2>/dev/null | tr -dc '0-9' || true)"; shift 2 || exit 1 ;;
+    --port-stdin)
+      PORT="$(head -n1 /dev/stdin 2>/dev/null | tr -dc '0-9' || true)"; shift ;;
+    --follow-port)
+      FOLLOW_PORT=1; shift ;;
+    --continue|-c)
+      CONTINUE_FLAG=1; ARGS+=("--continue"); shift ;;
+    --prompt)
+      shift ;;
+    *)
+      ARGS+=("$1"); shift ;;
+  esac
+done
+
+if [ "${PORT:-}" = "auto" ] || [ -z "${PORT:-}" ]; then
+  PORT="$(detect_port || true)"
+fi
+
+if [ -n "${PORT:-}" ]; then
+  SERVER_ARG=(--server "http://127.0.0.1:${PORT}")
+else
+  SERVER_ARG=()
+fi
+
+if [ ! -f "AGENTS.md" ] && [ -f "$ROOT/AGENTS.md" ]; then
+  cd "$ROOT"
+fi
+
+# Pemicu otomatis: setiap chat tom05 diteruskan ke antrean responder.
+# tom05 tetap messenger-only — agen/CLI/skill/tool/docker yang mengerjakan tugas.
+if [ "$NO_DISPATCH" -eq 0 ] && [ "${#ARGS[@]}" -gt 0 ]; then
+  CHAT_PARTS=()
+  for chat_arg in "${ARGS[@]}"; do
+    case "$chat_arg" in
+      -*) ;;
+      *) CHAT_PARTS+=("$chat_arg") ;;
+    esac
+  done
+  if [ "${#CHAT_PARTS[@]}" -gt 0 ]; then
+    CHAT_PROMPT="${CHAT_PARTS[*]}"
+    AUTO_ACK="$(python3 "$ROOT/system/chat_dispatch.py" auto-send "$CHAT_PROMPT" 2>/dev/null || true)"
+    if [ -n "$AUTO_ACK" ]; then
+      echo "[tom05] Chat diteruskan otomatis ke responder (messenger-only)." >&2
+    fi
+  fi
+fi
+
+OUTPUT="$(mktemp)"
+run_once() {
+  opencode run --model "${MODEL}" "${SERVER_ARG[@]}" "${ARGS[@]}" 2>&1 | tee "$OUTPUT"
+}
+
+run_once
+
+if [ "$FOLLOW_PORT" -eq 1 ]; then
+  NEXT_PORT="$(
+    grep -oE \
+      '(PORT|port|Port)[^0-9]{0,4}[0-9]{2,5}|127\.0\.0\.1:[0-9]{2,5}|"port"[[:space:]]*:[[:space:]]*[0-9]{2,5}' \
+      "$OUTPUT" | grep -oE '[0-9]{2,5}' | tail -1 || true
+  )"
+  if [ -n "${NEXT_PORT:-}" ] && [ "$NEXT_PORT" != "${PORT:-}" ]; then
+    echo "[tom05] Port diterima: ${NEXT_PORT}. Melanjutkan perintah..." >&2
+    SERVER_ARG=(--server "http://127.0.0.1:${NEXT_PORT}")
+    ARGS+=("--continue")
+    run_once
+  fi
+fi
+rm -f "$OUTPUT"

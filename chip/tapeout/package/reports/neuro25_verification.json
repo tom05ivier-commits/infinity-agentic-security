@@ -1,0 +1,23 @@
+{
+  "module": "tom05_neuro25",
+  "status": "PASS",
+  "vectors": 8192,
+  "mismatches": 0,
+  "details": [],
+  "outputs": [
+    "decision",
+    "stage",
+    "act",
+    "blocked",
+    "irq",
+    "ready"
+  ],
+  "profile": {
+    "age_reference_years": 25,
+    "gain": 2,
+    "kind": "synthetic-adult-reference"
+  },
+  "subject_data": false,
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier"
+}

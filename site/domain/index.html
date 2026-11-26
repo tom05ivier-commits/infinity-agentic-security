@@ -1,0 +1,68 @@
+<!doctype html>
+<!--
+  SPDX-License-Identifier: Tom05ivier-commits-1.0
+  Copyright (c) 2026 Tomi vier
+  Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+-->
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generator Domain Gratis — IT Agenty</title>
+  <meta name="description" content="Buat saran nama domain dan kelola subdomain lokal *.agenty.local untuk layanan workspace IT Agenty." />
+  <meta name="theme-color" content="#e14b4b" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <strong>IT Agenty — Domain Gratis</strong>
+      <nav><a href="/guide">Panduan penyedia</a><a href="/api/domains">Status JSON</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Domain gratis untuk layanan kita</h1>
+      <p>Tiga cara dalam satu tempat: saran nama, subdomain lokal <code>*.agenty.local</code>, dan status Dynamic DNS. Semua berjalan lokal; tidak ada pendaftaran domain publik otomatis.</p>
+    </section>
+
+    <section class="panel">
+      <h2>1. Generator nama</h2>
+      <form id="form-suggest">
+        <label for="seed">Kata kunci</label>
+        <input id="seed" name="seed" value="agenty" maxlength="32" />
+        <label for="count">Jumlah</label>
+        <input id="count" name="count" type="number" min="1" max="24" value="8" />
+        <button type="submit">Buat saran</button>
+      </form>
+      <ul id="suggestions" class="grid"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>2. Subdomain lokal</h2>
+      <form id="form-add">
+        <label for="name">Nama (tanpa titik)</label>
+        <input id="name" name="name" placeholder="ai-chip" maxlength="32" required />
+        <label for="target">Target</label>
+        <select id="target" name="target">
+          <option value="127.0.0.1">127.0.0.1</option>
+          <option value="::1">::1</option>
+        </select>
+        <button type="submit">Daftarkan</button>
+      </form>
+      <p class="muted" id="hosts-note"></p>
+      <ul id="domains" class="grid"></ul>
+      <button type="button" id="install-hosts">Pasang ke /etc/hosts (butuh konfirmasi)</button>
+    </section>
+
+    <section class="panel">
+      <h2>3. Dynamic DNS publik</h2>
+      <p id="ddns-status">Memuat status…</p>
+      <p class="muted">Update hanya lewat CLI dengan <code>--authorize</code> dan token milik Anda. Situs ini tidak menyimpan atau menampilkan token.</p>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

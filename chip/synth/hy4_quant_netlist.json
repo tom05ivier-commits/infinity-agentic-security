@@ -1,0 +1,39 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "hy4_quant": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "chip/rtl/hy4_quant.v:7.1-9.10"
+      },
+      "ports": {
+        "score": {
+          "direction": "input",
+          "bits": [ 2, 3, 4, 5 ]
+        },
+        "level": {
+          "direction": "output",
+          "bits": [ 4, 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "level": {
+          "hide_name": 0,
+          "bits": [ 4, 5 ],
+          "attributes": {
+            "src": "chip/rtl/hy4_quant.v:7.50-7.55"
+          }
+        },
+        "score": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5 ],
+          "attributes": {
+            "src": "chip/rtl/hy4_quant.v:7.30-7.35"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,772 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog chip/rtl/tom05_ai_accel.v; synth; write_verilog chip/synth/tom05_ai_accel_gate.v; write_json chip/synth/tom05_ai_accel_netlist.json; stat' --
+
+1. Executing Verilog-2005 frontend: chip/rtl/tom05_ai_accel.v
+Parsing Verilog input from `chip/rtl/tom05_ai_accel.v' to AST representation.
+Generating RTLIL representation for module `\tom05_ai_accel'.
+Successfully finished Verilog frontend.
+
+2. Executing SYNTH pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+<suppressed ~25 debug messages>
+
+2.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+<suppressed ~24 debug messages>
+
+2.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+Removed 0 unused cells and 37 unused wires.
+<suppressed ~1 debug messages>
+
+2.5. Executing CHECK pass (checking for obvious problems).
+Checking module tom05_ai_accel...
+Found and reported 0 problems.
+
+2.6. Executing OPT pass (performing simple optimizations).
+
+2.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+
+2.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+2.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tom05_ai_accel..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tom05_ai_accel.
+Performed a total of 0 changes.
+
+2.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+Removed a total of 0 cells.
+
+2.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+2.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+
+2.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tom05_ai_accel..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tom05_ai_accel.
+Performed a total of 0 changes.
+
+2.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+Removed a total of 0 cells.
+
+2.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+
+2.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+
+2.6.16. Finished OPT passes. (There is nothing left to do.)
+
+2.7. Executing FSM pass (extract and optimize FSM).
+
+2.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+2.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+2.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+
+2.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+2.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+2.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+2.8. Executing OPT pass (performing simple optimizations).
+
+2.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+
+2.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+Removed a total of 0 cells.
+
+2.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tom05_ai_accel..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tom05_ai_accel.
+Performed a total of 0 changes.
+
+2.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+Removed a total of 0 cells.
+
+2.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+
+2.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+
+2.8.9. Finished OPT passes. (There is nothing left to do.)
+
+2.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 29 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:40$2 ($add).
+Removed top 28 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:40$2 ($add).
+Removed top 30 bits (of 32) from port B of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:40$3 ($mul).
+Removed top 28 bits (of 32) from port Y of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:40$3 ($mul).
+Removed top 28 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:40$4 ($add).
+Removed top 28 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:40$4 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:40$4 ($add).
+Removed top 27 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:40$6 ($add).
+Removed top 28 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:40$6 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:40$6 ($add).
+Removed top 30 bits (of 32) from port B of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:42$8 ($mul).
+Removed top 28 bits (of 32) from port Y of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:42$8 ($mul).
+Removed top 28 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:42$9 ($add).
+Removed top 28 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:42$9 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:42$9 ($add).
+Removed top 27 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:42$11 ($add).
+Removed top 29 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:42$11 ($add).
+Removed top 26 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:42$11 ($add).
+Removed top 26 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:42$12 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:42$12 ($add).
+Removed top 1 bits (of 6) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:42$12 ($add).
+Removed top 29 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:44$15 ($add).
+Removed top 29 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:44$15 ($add).
+Removed top 28 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:44$15 ($add).
+Removed top 28 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:44$16 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:44$16 ($add).
+Removed top 27 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:44$17 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:44$17 ($add).
+Removed top 29 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:45$18 ($add).
+Removed top 29 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:45$20 ($add).
+Removed top 29 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:45$20 ($add).
+Removed top 28 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:45$20 ($add).
+Removed top 28 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:45$22 ($add).
+Removed top 29 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:45$22 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:45$22 ($add).
+Removed top 31 bits (of 32) from port A of cell tom05_ai_accel.$or$chip/rtl/tom05_ai_accel.v:46$27 ($or).
+Removed top 31 bits (of 32) from port B of cell tom05_ai_accel.$or$chip/rtl/tom05_ai_accel.v:46$27 ($or).
+Removed top 31 bits (of 32) from port Y of cell tom05_ai_accel.$or$chip/rtl/tom05_ai_accel.v:46$27 ($or).
+Removed top 31 bits (of 32) from port A of cell tom05_ai_accel.$or$chip/rtl/tom05_ai_accel.v:46$30 ($or).
+Removed top 31 bits (of 32) from port B of cell tom05_ai_accel.$or$chip/rtl/tom05_ai_accel.v:46$30 ($or).
+Removed top 31 bits (of 32) from port Y of cell tom05_ai_accel.$or$chip/rtl/tom05_ai_accel.v:46$30 ($or).
+Removed top 31 bits (of 32) from port A of cell tom05_ai_accel.$or$chip/rtl/tom05_ai_accel.v:46$33 ($or).
+Removed top 31 bits (of 32) from port B of cell tom05_ai_accel.$or$chip/rtl/tom05_ai_accel.v:46$33 ($or).
+Removed top 31 bits (of 32) from port Y of cell tom05_ai_accel.$or$chip/rtl/tom05_ai_accel.v:46$33 ($or).
+Removed top 31 bits (of 32) from port A of cell tom05_ai_accel.$sub$chip/rtl/tom05_ai_accel.v:48$34 ($sub).
+Removed top 30 bits (of 32) from port Y of cell tom05_ai_accel.$sub$chip/rtl/tom05_ai_accel.v:48$34 ($sub).
+Removed top 26 bits (of 32) from port Y of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:48$36 ($mul).
+Removed top 26 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:48$37 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:48$37 ($add).
+Removed top 27 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:48$37 ($add).
+Removed top 1 bits (of 6) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:48$37 ($add).
+Removed top 28 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:50$42 ($add).
+Removed top 29 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:50$42 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:50$42 ($add).
+Removed top 27 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:50$44 ($add).
+Removed top 29 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:50$44 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:50$44 ($add).
+Removed top 31 bits (of 32) from port A of cell tom05_ai_accel.$sub$chip/rtl/tom05_ai_accel.v:52$46 ($sub).
+Removed top 31 bits (of 32) from port B of cell tom05_ai_accel.$sub$chip/rtl/tom05_ai_accel.v:52$46 ($sub).
+Removed top 30 bits (of 32) from port Y of cell tom05_ai_accel.$sub$chip/rtl/tom05_ai_accel.v:52$46 ($sub).
+Removed top 31 bits (of 32) from port A of cell tom05_ai_accel.$sub$chip/rtl/tom05_ai_accel.v:52$49 ($sub).
+Removed top 31 bits (of 32) from port B of cell tom05_ai_accel.$sub$chip/rtl/tom05_ai_accel.v:52$49 ($sub).
+Removed top 30 bits (of 32) from port Y of cell tom05_ai_accel.$sub$chip/rtl/tom05_ai_accel.v:52$49 ($sub).
+Removed top 31 bits (of 32) from port A of cell tom05_ai_accel.$and$chip/rtl/tom05_ai_accel.v:53$56 ($and).
+Removed top 31 bits (of 32) from port B of cell tom05_ai_accel.$and$chip/rtl/tom05_ai_accel.v:54$63 ($and).
+Removed top 31 bits (of 32) from port A of cell tom05_ai_accel.$and$chip/rtl/tom05_ai_accel.v:55$69 ($and).
+Removed top 31 bits (of 32) from port B of cell tom05_ai_accel.$and$chip/rtl/tom05_ai_accel.v:55$69 ($and).
+Removed top 31 bits (of 32) from port Y of cell tom05_ai_accel.$and$chip/rtl/tom05_ai_accel.v:55$69 ($and).
+Removed top 31 bits (of 32) from port A of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:55$70 ($mul).
+Removed top 26 bits (of 32) from port Y of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:55$70 ($mul).
+Removed top 26 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:52$71 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:52$71 ($add).
+Removed top 27 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:52$71 ($add).
+Removed top 1 bits (of 6) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:52$71 ($add).
+Removed top 31 bits (of 32) from port A of cell tom05_ai_accel.$and$chip/rtl/tom05_ai_accel.v:59$77 ($and).
+Removed top 31 bits (of 32) from port B of cell tom05_ai_accel.$and$chip/rtl/tom05_ai_accel.v:59$77 ($and).
+Removed top 31 bits (of 32) from port Y of cell tom05_ai_accel.$and$chip/rtl/tom05_ai_accel.v:59$77 ($and).
+Removed top 1 bits (of 6) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:42$11 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:48$35 ($mul).
+Removed top 1 bits (of 6) from port Y of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:48$36 ($mul).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:52$65 ($add).
+Removed top 27 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:52$65 ($add).
+Removed top 27 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:52$65 ($add).
+Removed top 1 bits (of 6) from port Y of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:55$70 ($mul).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:52$58 ($add).
+Removed top 27 bits (of 32) from port A of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:52$58 ($add).
+Removed top 27 bits (of 32) from port B of cell tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:52$58 ($add).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:54$64 ($mul).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:52$51 ($mul).
+Removed top 27 bits (of 32) from port Y of cell tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:53$57 ($mul).
+Removed top 28 bits (of 32) from wire tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:40$2_Y.
+Removed top 27 bits (of 32) from wire tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:40$4_Y.
+Removed top 27 bits (of 32) from wire tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:42$11_Y.
+Removed top 27 bits (of 32) from wire tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:42$9_Y.
+Removed top 28 bits (of 32) from wire tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:44$15_Y.
+Removed top 27 bits (of 32) from wire tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:44$16_Y.
+Removed top 27 bits (of 32) from wire tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:50$42_Y.
+Removed top 27 bits (of 32) from wire tom05_ai_accel.$add$chip/rtl/tom05_ai_accel.v:52$58_Y.
+Removed top 28 bits (of 32) from wire tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:40$3_Y.
+Removed top 28 bits (of 32) from wire tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:42$8_Y.
+Removed top 27 bits (of 32) from wire tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:48$35_Y.
+Removed top 27 bits (of 32) from wire tom05_ai_accel.$mul$chip/rtl/tom05_ai_accel.v:52$51_Y.
+Removed top 31 bits (of 32) from wire tom05_ai_accel.$or$chip/rtl/tom05_ai_accel.v:46$27_Y.
+
+2.10. Executing PEEPOPT pass (run peephole optimizers).
+
+2.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+Removed 0 unused cells and 22 unused wires.
+<suppressed ~1 debug messages>
+
+2.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module tom05_ai_accel:
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:40$2 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:40$4 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:40$6 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:42$11 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:42$12 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:42$9 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:44$15 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:44$16 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:44$17 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:45$18 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:45$20 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:45$22 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:48$37 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:50$42 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:50$44 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:52$58 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:52$65 ($add).
+  creating $macc model for $add$chip/rtl/tom05_ai_accel.v:52$71 ($add).
+  creating $macc model for $mul$chip/rtl/tom05_ai_accel.v:40$3 ($mul).
+  creating $macc model for $mul$chip/rtl/tom05_ai_accel.v:42$8 ($mul).
+  creating $macc model for $mul$chip/rtl/tom05_ai_accel.v:48$35 ($mul).
+  creating $macc model for $mul$chip/rtl/tom05_ai_accel.v:48$36 ($mul).
+  creating $macc model for $mul$chip/rtl/tom05_ai_accel.v:52$51 ($mul).
+  creating $macc model for $mul$chip/rtl/tom05_ai_accel.v:53$57 ($mul).
+  creating $macc model for $mul$chip/rtl/tom05_ai_accel.v:54$64 ($mul).
+  creating $macc model for $mul$chip/rtl/tom05_ai_accel.v:55$70 ($mul).
+  creating $macc model for $sub$chip/rtl/tom05_ai_accel.v:48$34 ($sub).
+  creating $macc model for $sub$chip/rtl/tom05_ai_accel.v:52$46 ($sub).
+  creating $macc model for $sub$chip/rtl/tom05_ai_accel.v:52$49 ($sub).
+  merging $macc model for $add$chip/rtl/tom05_ai_accel.v:52$65 into $add$chip/rtl/tom05_ai_accel.v:52$71.
+  merging $macc model for $add$chip/rtl/tom05_ai_accel.v:52$58 into $add$chip/rtl/tom05_ai_accel.v:52$71.
+  merging $macc model for $mul$chip/rtl/tom05_ai_accel.v:52$51 into $add$chip/rtl/tom05_ai_accel.v:52$71.
+  merging $macc model for $mul$chip/rtl/tom05_ai_accel.v:55$70 into $add$chip/rtl/tom05_ai_accel.v:52$71.
+  merging $macc model for $mul$chip/rtl/tom05_ai_accel.v:54$64 into $add$chip/rtl/tom05_ai_accel.v:52$71.
+  merging $macc model for $mul$chip/rtl/tom05_ai_accel.v:53$57 into $add$chip/rtl/tom05_ai_accel.v:52$71.
+  merging $macc model for $add$chip/rtl/tom05_ai_accel.v:50$42 into $add$chip/rtl/tom05_ai_accel.v:50$44.
+  merging $macc model for $mul$chip/rtl/tom05_ai_accel.v:48$35 into $add$chip/rtl/tom05_ai_accel.v:48$37.
+  merging $macc model for $mul$chip/rtl/tom05_ai_accel.v:48$36 into $add$chip/rtl/tom05_ai_accel.v:48$37.
+  merging $macc model for $add$chip/rtl/tom05_ai_accel.v:45$20 into $add$chip/rtl/tom05_ai_accel.v:45$22.
+  merging $macc model for $add$chip/rtl/tom05_ai_accel.v:45$18 into $add$chip/rtl/tom05_ai_accel.v:45$22.
+  merging $macc model for $add$chip/rtl/tom05_ai_accel.v:44$16 into $add$chip/rtl/tom05_ai_accel.v:44$17.
+  merging $macc model for $mul$chip/rtl/tom05_ai_accel.v:42$8 into $add$chip/rtl/tom05_ai_accel.v:42$9.
+  merging $macc model for $add$chip/rtl/tom05_ai_accel.v:42$11 into $add$chip/rtl/tom05_ai_accel.v:42$12.
+  merging $macc model for $add$chip/rtl/tom05_ai_accel.v:42$9 into $add$chip/rtl/tom05_ai_accel.v:42$12.
+  merging $macc model for $add$chip/rtl/tom05_ai_accel.v:40$4 into $add$chip/rtl/tom05_ai_accel.v:40$6.
+  merging $macc model for $add$chip/rtl/tom05_ai_accel.v:40$2 into $add$chip/rtl/tom05_ai_accel.v:40$6.
+  merging $macc model for $mul$chip/rtl/tom05_ai_accel.v:40$3 into $add$chip/rtl/tom05_ai_accel.v:40$6.
+  creating $alu model for $macc $sub$chip/rtl/tom05_ai_accel.v:52$49.
+  creating $alu model for $macc $add$chip/rtl/tom05_ai_accel.v:44$15.
+  creating $alu model for $macc $sub$chip/rtl/tom05_ai_accel.v:48$34.
+  creating $alu model for $macc $sub$chip/rtl/tom05_ai_accel.v:52$46.
+  creating $macc cell for $add$chip/rtl/tom05_ai_accel.v:44$17: $auto$alumacc.cc:365:replace_macc$93
+  creating $macc cell for $add$chip/rtl/tom05_ai_accel.v:50$44: $auto$alumacc.cc:365:replace_macc$94
+  creating $macc cell for $add$chip/rtl/tom05_ai_accel.v:42$12: $auto$alumacc.cc:365:replace_macc$95
+  creating $macc cell for $add$chip/rtl/tom05_ai_accel.v:48$37: $auto$alumacc.cc:365:replace_macc$96
+  creating $macc cell for $add$chip/rtl/tom05_ai_accel.v:40$6: $auto$alumacc.cc:365:replace_macc$97
+  creating $macc cell for $add$chip/rtl/tom05_ai_accel.v:45$22: $auto$alumacc.cc:365:replace_macc$98
+  creating $macc cell for $add$chip/rtl/tom05_ai_accel.v:52$71: $auto$alumacc.cc:365:replace_macc$99
+  creating $alu cell for $sub$chip/rtl/tom05_ai_accel.v:52$46: $auto$alumacc.cc:485:replace_alu$100
+  creating $alu cell for $sub$chip/rtl/tom05_ai_accel.v:48$34: $auto$alumacc.cc:485:replace_alu$103
+  creating $alu cell for $add$chip/rtl/tom05_ai_accel.v:44$15: $auto$alumacc.cc:485:replace_alu$106
+  creating $alu cell for $sub$chip/rtl/tom05_ai_accel.v:52$49: $auto$alumacc.cc:485:replace_alu$109
+  created 4 $alu and 7 $macc cells.
+
+2.13. Executing SHARE pass (SAT-based resource sharing).
+Found 8 cells in module tom05_ai_accel that may be considered for resource sharing.
+  Analyzing resource sharing options for $mul$chip/rtl/tom05_ai_accel.v:55$70 ($mul):
+    Found cell that is never activated: $mul$chip/rtl/tom05_ai_accel.v:55$70
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $mul$chip/rtl/tom05_ai_accel.v:54$64 ($mul):
+    Found cell that is never activated: $add$chip/rtl/tom05_ai_accel.v:52$65
+    Found cell that is never activated: $mul$chip/rtl/tom05_ai_accel.v:54$64
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $mul$chip/rtl/tom05_ai_accel.v:53$57 ($mul):
+    Found cell that is never activated: $add$chip/rtl/tom05_ai_accel.v:52$58
+    Found cell that is never activated: $mul$chip/rtl/tom05_ai_accel.v:53$57
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $mul$chip/rtl/tom05_ai_accel.v:52$51 ($mul):
+    Found cell that is never activated: $mul$chip/rtl/tom05_ai_accel.v:52$51
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $mul$chip/rtl/tom05_ai_accel.v:48$36 ($mul):
+    Found cell that is never activated: $mul$chip/rtl/tom05_ai_accel.v:48$36
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $mul$chip/rtl/tom05_ai_accel.v:48$35 ($mul):
+    Found cell that is never activated: $mul$chip/rtl/tom05_ai_accel.v:48$35
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $mul$chip/rtl/tom05_ai_accel.v:42$8 ($mul):
+    Found cell that is never activated: $add$chip/rtl/tom05_ai_accel.v:42$11
+    Found cell that is never activated: $add$chip/rtl/tom05_ai_accel.v:42$9
+    Found cell that is never activated: $mul$chip/rtl/tom05_ai_accel.v:42$8
+    Cell is never active. Sharing is pointless, we simply remove it.
+  Analyzing resource sharing options for $mul$chip/rtl/tom05_ai_accel.v:40$3 ($mul):
+    Found cell that is never activated: $add$chip/rtl/tom05_ai_accel.v:40$4
+    Found cell that is never activated: $mul$chip/rtl/tom05_ai_accel.v:40$3
+    Cell is never active. Sharing is pointless, we simply remove it.
+Removing 13 cells in module tom05_ai_accel:
+  Removing cell $mul$chip/rtl/tom05_ai_accel.v:40$3 ($mul).
+  Removing cell $add$chip/rtl/tom05_ai_accel.v:40$4 ($add).
+  Removing cell $mul$chip/rtl/tom05_ai_accel.v:42$8 ($mul).
+  Removing cell $add$chip/rtl/tom05_ai_accel.v:42$9 ($add).
+  Removing cell $add$chip/rtl/tom05_ai_accel.v:42$11 ($add).
+  Removing cell $mul$chip/rtl/tom05_ai_accel.v:48$35 ($mul).
+  Removing cell $mul$chip/rtl/tom05_ai_accel.v:48$36 ($mul).
+  Removing cell $mul$chip/rtl/tom05_ai_accel.v:52$51 ($mul).
+  Removing cell $mul$chip/rtl/tom05_ai_accel.v:53$57 ($mul).
+  Removing cell $add$chip/rtl/tom05_ai_accel.v:52$58 ($add).
+  Removing cell $mul$chip/rtl/tom05_ai_accel.v:54$64 ($mul).
+  Removing cell $add$chip/rtl/tom05_ai_accel.v:52$65 ($add).
+  Removing cell $mul$chip/rtl/tom05_ai_accel.v:55$70 ($mul).
+
+2.14. Executing OPT pass (performing simple optimizations).
+
+2.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+
+2.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+Removed a total of 0 cells.
+
+2.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tom05_ai_accel..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tom05_ai_accel.
+Performed a total of 0 changes.
+
+2.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+Removed a total of 0 cells.
+
+2.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+Removed 5 unused cells and 18 unused wires.
+<suppressed ~6 debug messages>
+
+2.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+
+2.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tom05_ai_accel..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tom05_ai_accel.
+Performed a total of 0 changes.
+
+2.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+Removed a total of 0 cells.
+
+2.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+
+2.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+
+2.14.16. Finished OPT passes. (There is nothing left to do.)
+
+2.15. Executing MEMORY pass.
+
+2.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+2.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+2.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+2.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+2.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+2.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+
+2.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+2.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+2.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+
+2.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+
+2.17. Executing OPT pass (performing simple optimizations).
+
+2.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+<suppressed ~41 debug messages>
+
+2.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+Removed a total of 0 cells.
+
+2.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+Removed 0 unused cells and 19 unused wires.
+<suppressed ~1 debug messages>
+
+2.17.5. Finished fast OPT passes.
+
+2.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+2.19. Executing OPT pass (performing simple optimizations).
+
+2.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+
+2.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+Removed a total of 0 cells.
+
+2.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \tom05_ai_accel..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+2.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \tom05_ai_accel.
+Performed a total of 0 changes.
+
+2.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+Removed a total of 0 cells.
+
+2.19.6. Executing OPT_SHARE pass.
+
+2.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+
+2.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+
+2.19.10. Finished OPT passes. (There is nothing left to do.)
+
+2.20. Executing TECHMAP pass (map to technology primitives).
+
+2.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+2.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using extmapper maccmap for cells of type $macc.
+  add \a0 (2 bits, unsigned)
+  add { \a3 1'0 } (3 bits, unsigned)
+  add { \a2 1'0 } (3 bits, unsigned)
+  add \a1 (2 bits, unsigned)
+  packed 2 (1) bits / 1 words into adder tree
+  add { 31'0000000000000000000000000000000 $auto$rtlil.cc:2401:Not$113 } * \d_near_miss (32x5 bits, unsigned)
+  add \d_near_hit * \h (5x1 bits, unsigned)
+Using extmapper simplemap for cells of type $and.
+  add { $add$chip/rtl/tom05_ai_accel.v:44$15_Y [3:1] 1'0 } (4 bits, unsigned)
+  add { \a3 1'0 } (3 bits, unsigned)
+  add { \a2 1'0 } (3 bits, unsigned)
+  add { 31'0000000000000000000000000000000 $and$chip/rtl/tom05_ai_accel.v:52$50_Y [0] } * \d_tensor (32x5 bits, unsigned)
+  add \d_mesh * $and$chip/rtl/tom05_ai_accel.v:55$69_Y [0] (5x1 bits, unsigned)
+  add { 31'0000000000000000000000000000000 $and$chip/rtl/tom05_ai_accel.v:54$63_Y [0] } * \d_near (32x5 bits, unsigned)
+  add { 31'0000000000000000000000000000000 $and$chip/rtl/tom05_ai_accel.v:53$56_Y [0] } * \d_lpu (32x5 bits, unsigned)
+Using extmapper simplemap for cells of type $or.
+  add { $add$chip/rtl/tom05_ai_accel.v:44$15_Y [3:1] 1'0 } (4 bits, unsigned)
+  add \a3 (2 bits, unsigned)
+  add \a2 (2 bits, unsigned)
+Using template $paramod$649fc39eef2451024566705288528c8671211199\_90_alu for cells of type $alu.
+  add \a0 (2 bits, unsigned)
+  add { \a3 2'00 } (4 bits, unsigned)
+  add \a2 * 2'11 (2x2 bits, unsigned)
+  add { \a1 1'0 } (3 bits, unsigned)
+  add { \a0 2'00 } (4 bits, unsigned)
+  add \a3 (2 bits, unsigned)
+  add { \a2 1'0 } (3 bits, unsigned)
+  add \a1 * 2'11 (2x2 bits, unsigned)
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000011 for cells of type $fa.
+Using template $paramod$b18e16801adf491a64caa0542270798e5d4ac6b6\_90_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000101 for cells of type $fa.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000100 for cells of type $fa.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $mux.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~726 debug messages>
+
+2.21. Executing OPT pass (performing simple optimizations).
+
+2.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+<suppressed ~737 debug messages>
+
+2.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+<suppressed ~30 debug messages>
+Removed a total of 10 cells.
+
+2.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+Removed 46 unused cells and 565 unused wires.
+<suppressed ~47 debug messages>
+
+2.21.5. Finished fast OPT passes.
+
+2.22. Executing ABC pass (technology mapping using ABC).
+
+2.22.1. Extracting gate netlist of module `\tom05_ai_accel' to `<abc-temp-dir>/input.blif'..
+Extracted 244 gates and 255 wires to a netlist network with 11 inputs and 7 outputs.
+
+2.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+2.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               NOT cells:       12
+ABC RESULTS:              NAND cells:       10
+ABC RESULTS:               MUX cells:        4
+ABC RESULTS:             ORNOT cells:        9
+ABC RESULTS:               NOR cells:       14
+ABC RESULTS:               AND cells:       12
+ABC RESULTS:               XOR cells:       62
+ABC RESULTS:                OR cells:       22
+ABC RESULTS:              XNOR cells:       28
+ABC RESULTS:            ANDNOT cells:       73
+ABC RESULTS:        internal signals:      237
+ABC RESULTS:           input signals:       11
+ABC RESULTS:          output signals:        7
+Removing temp directory.
+
+2.23. Executing OPT pass (performing simple optimizations).
+
+2.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module tom05_ai_accel.
+<suppressed ~1 debug messages>
+
+2.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\tom05_ai_accel'.
+Removed a total of 0 cells.
+
+2.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \tom05_ai_accel..
+Removed 0 unused cells and 152 unused wires.
+<suppressed ~6 debug messages>
+
+2.23.5. Finished fast OPT passes.
+
+2.24. Executing HIERARCHY pass (managing design hierarchy).
+
+2.25. Printing statistics.
+
+=== tom05_ai_accel ===
+
+   Number of wires:                253
+   Number of wire bits:            268
+   Number of public wires:          14
+   Number of public wire bits:      29
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                246
+     $_ANDNOT_                      73
+     $_AND_                         12
+     $_MUX_                          4
+     $_NAND_                        10
+     $_NOR_                         14
+     $_NOT_                         12
+     $_ORNOT_                        9
+     $_OR_                          22
+     $_XNOR_                        28
+     $_XOR_                         62
+
+2.26. Executing CHECK pass (checking for obvious problems).
+Checking module tom05_ai_accel...
+Found and reported 0 problems.
+
+3. Executing Verilog backend.
+
+3.1. Executing BMUXMAP pass.
+
+3.2. Executing DEMUXMAP pass.
+Dumping module `\tom05_ai_accel'.
+
+4. Executing JSON backend.
+
+5. Printing statistics.
+
+=== tom05_ai_accel ===
+
+   Number of wires:                253
+   Number of wire bits:            268
+   Number of public wires:          14
+   Number of public wire bits:      29
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                246
+     $_ANDNOT_                      73
+     $_AND_                         12
+     $_MUX_                          4
+     $_NAND_                        10
+     $_NOR_                         14
+     $_NOT_                         12
+     $_ORNOT_                        9
+     $_OR_                          22
+     $_XNOR_                        28
+     $_XOR_                         62
+
+End of script. Logfile hash: 2723c2421b, CPU: user 0.96s system 0.09s, MEM: 17.04 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 21% 19x opt_expr (0 sec), 19% 1x abc (0 sec), ...

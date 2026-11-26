@@ -1,0 +1,88 @@
+{
+  "spdx": "SPDX-License-Identifier: Tom05ivier-commits-1.0",
+  "copyright": "Copyright (c) 2026 Tomi vier",
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "version": 1,
+  "schema": "tom05-chat-dispatch-responder-registry/1",
+  "note": "Daftar responder yang menjawab pesan chat tom05-flash-free. tom05 hanya mengirim pesan; seluruh eksekusi dilakukan responder lokal yang diizinkan. Perintah memakai argv (tanpa shell) dan dapat diinspeksi.",
+  "defaults": {
+    "timeout_seconds": 90,
+    "max_output_chars": 4000
+  },
+  "sender": {
+    "model": "tom05/tom05-flash-free",
+    "role": "messenger-only",
+    "authority": "hanya mengirim pesan; tidak mengeksekusi tugas"
+  },
+  "responders": [
+    {
+      "name": "agen-computer",
+      "kind": "agent",
+      "description": "Agent Computer — perencana, runtime, dan memori tugas",
+      "command": ["python3", "agent/cli.py", "run", "{task}"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "advanced-computer",
+      "kind": "agent",
+      "description": "Infinity Advanced Computer — persepsi, penalaran, aksi, refleksi",
+      "command": ["python3", "advanced/cli.py", "run", "{task}"],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "cli-sistem",
+      "kind": "cli",
+      "description": "System CLI — status komputer terpadu",
+      "command": ["python3", "system/cli.py", "status"]
+    },
+    {
+      "name": "cli-keamanan",
+      "kind": "cli",
+      "description": "Security CLI — verifikasi kepatuhan",
+      "command": ["python3", "security/security_cli.py", "verify"]
+    },
+    {
+      "name": "cli-chip",
+      "kind": "cli",
+      "description": "Chip CLI — skor kualitas chip hy4/tom05",
+      "command": ["python3", "chip/chip_cli.py", "score"]
+    },
+    {
+      "name": "cli-platform",
+      "kind": "cli",
+      "description": "Platform Engineering CLI — doctor/scorecard",
+      "command": ["python3", "platform_clis/cli.py", "doctor"]
+    },
+    {
+      "name": "cli-parity",
+      "kind": "cli",
+      "description": "Pemeriksa parity model tom05/hy4",
+      "command": ["python3", "system/model_parity.py"]
+    },
+    {
+      "name": "skill-koneksi",
+      "kind": "skill",
+      "description": "Skill koneksi OpenCode/tom05/bridge (read-only)",
+      "command": ["python3", "system/connection_status.py"]
+    },
+    {
+      "name": "skill-perangkat",
+      "kind": "skill",
+      "description": "Skill hardware perangkat Android (read-only)",
+      "command": ["python3", "system/hardware_report.py"]
+    },
+    {
+      "name": "tool-status-akhir",
+      "kind": "tool",
+      "description": "Agregat status akhir seluruh gate (read-only)",
+      "command": ["python3", "system/final_status.py"]
+    },
+    {
+      "name": "docker-verify",
+      "kind": "docker",
+      "description": "Verifikasi statis container hardened tom05 (tanpa daemon)",
+      "command": ["bash", "scripts/tom05_container_verify.sh", "--json"]
+    }
+  ]
+}

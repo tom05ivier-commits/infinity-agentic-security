@@ -1,0 +1,26 @@
+{
+  "license": "Tom05ivier-commits-1.0",
+  "status": "AKTIF",
+  "repository": "https://github.com/tom05ivier-commits/provider-tom05",
+  "owner": "tom05ivier-commits",
+  "branch": "main",
+  "commit": "a634da70ffab0c57cc42fe3b4977c449fa4f8b7f",
+  "isi_repo": [
+    ".gitignore",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "provider.json",
+    "server.py"
+  ],
+  "lisensi_repo": "GNU AFFERO GENERAL PUBLIC LICENSE v3.0",
+  "tujuan": "Calon penyedia mandiri untuk identitas Tom05, terpisah dari namespace opencode.",
+  "batasan": [
+    "Lisensi AGPL-3.0 pada repo dipertahankan; lisensi IT Agenty tidak dicampur.",
+    "Provider meneruskan ke runtime yang ada; bukan model terlatih baru.",
+    "Tidak ada kredensial yang dibaca atau disimpan di repo maupun config ini."
+  ],
+  "aktif": true,
+  "model": "tom05/tom05-flash-free",
+  "endpoint": "http://127.0.0.1:8772/v1"
+}

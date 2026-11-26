@@ -1,0 +1,299 @@
+{
+  "source": "katalog model lokal tom05 (mandiri)",
+  "generated": "2026-11-21",
+  "note": "Katalog mandiri tom05. Alias tom05-flash-free kini mengarah ke model nyata tom05/tom05-flash-free yang disajikan provider lokal Tom05 (127.0.0.1:8772). Bukan model terlatih baru; provider meneruskan ke model yang tersedia di runtime.",
+  "license": "Tom05ivier-commits-1.0",
+  "total_models": 47,
+  "free_count": 11,
+  "models": [
+    {
+      "id": "opencode/beam-free",
+      "name": "Beam Free",
+      "variants": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "status": "active",
+      "ctl": 100000000,
+      "declared_only": true
+    },
+    {
+      "id": "opencode/big-pickle",
+      "name": "Big Pickle",
+      "variants": [],
+      "status": "active",
+      "ctl": 100000000,
+      "declared_only": true
+    },
+    {
+      "id": "opencode/deepseek-v4.1-flash-free",
+      "name": "DeepSeek V4.1 Flash Free",
+      "variants": [
+        "low",
+        "high",
+        "max"
+      ],
+      "status": "active",
+      "ctl": 100000000,
+      "declared_only": true
+    },
+    {
+      "id": "opencode/flint-40b-free",
+      "name": "Flint 40B Free",
+      "variants": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "status": "active",
+      "ctl": 100000000,
+      "declared_only": true
+    },
+    {
+      "id": "opencode/hy4-flash-free",
+      "name": "Hy4 flash Free",
+      "variants": [
+        "none",
+        "high"
+      ],
+      "status": "active",
+      "ctl": 100000000,
+      "declared_only": true
+    },
+    {
+      "id": "opencode/iceman-free",
+      "name": "Iceman Free",
+      "variants": [],
+      "status": "active",
+      "ctl": 100000000,
+      "declared_only": true
+    },
+    {
+      "id": "opencode/longcat-2.5-free",
+      "name": "LongCat 2.5 Free",
+      "variants": [],
+      "status": "active",
+      "ctl": 100000000,
+      "declared_only": true
+    },
+    {
+      "id": "opencode/mimo-v2.6-flash-free",
+      "name": "MiMo-V2.6-Flash Free",
+      "variants": [],
+      "status": "active",
+      "ctl": 100000000,
+      "declared_only": true
+    },
+    {
+      "id": "opencode/nemotron-3.5-lightning-free",
+      "name": "Nemotron 3.5 Lightning Free",
+      "variants": [],
+      "status": "active",
+      "ctl": 100000000,
+      "declared_only": true
+    },
+    {
+      "id": "opencode/nemotron-3.5-super-vl-free",
+      "name": "Nemotron 3.5 Super VL Free",
+      "variants": [
+        "none",
+        "minimal",
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "status": "active",
+      "ctl": 100000000,
+      "declared_only": true
+    },
+    {
+      "id": "opencode/tidepool-alpha-free",
+      "name": "Tidepool Alpha Free",
+      "variants": [
+        "minimal",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "status": "active",
+      "ctl": 100000000,
+      "declared_only": true
+    }
+  ],
+  "aliases": [
+    {
+      "id": "tom05-flash-free",
+      "name": "Tom05 flash Free",
+      "target": "tom05/tom05-flash-free",
+      "variants": [
+        "none",
+        "high"
+      ],
+      "default_variant": "high",
+      "status": "active",
+      "verified": true,
+      "license": "Tom05ivier-commits-1.0",
+      "provider": "tom05",
+      "context_limit": 100000000,
+      "declared_only": true,
+      "ctl": 100000000,
+      "copyright_notice": "TOM05-FLASH-FREE-NOTICE.md"
+    }
+  ],
+  "capabilities": {
+    "cli_version": "1.3.0",
+    "soc": {
+      "module": "tom05_soc",
+      "target": "android-smartphone",
+      "rtl": "chip/rtl/tom05_soc.v",
+      "verify": "python3 chip/chip_cli.py soc",
+      "vectors": 1024,
+      "status": "PASS"
+    },
+    "ai_chip": {
+      "module": "tom05_ai_accel",
+      "target": "ai-inference-accelerator",
+      "rtl": "chip/rtl/tom05_ai_accel.v",
+      "verify": "python3 chip/chip_cli.py ai-chip",
+      "vectors": 2048,
+      "fabrication": "NOT_READY",
+      "status": "PASS"
+    },
+    "domain": {
+      "root_domain": "agenty.local",
+      "cli": "python3 system/domain_cli.py status",
+      "service": "http://127.0.0.1:8784",
+      "ddns_automatic": false,
+      "status": "AKTIF"
+    },
+    "permission": {
+      "meta_letter": "surat-persetujuan-otomatis.md",
+      "cli": "python3 security/permission_cli.py check",
+      "max_ttl": 300,
+      "valid_until": "2027-12-31",
+      "automatic_signature": false,
+      "status": "AKTIF"
+    },
+    "container": {
+      "dockerfile": "Dockerfile.tom05",
+      "compose": "docker-compose.tom05.yml",
+      "verify": "scripts/tom05_container_verify.sh",
+      "hardening": [
+        "non-root",
+        "read-only-rootfs",
+        "cap-drop-all",
+        "no-new-privileges",
+        "loopback-only"
+      ],
+      "network": "agenty-net",
+      "manager": "infinity",
+      "manager_endpoint": "http://infinity:8766/v1/chat/completions",
+      "supervisor_service": "tom05-provider"
+    },
+    "display": {
+      "name": "Tom05 Landscape Display",
+      "orientation": "lanskap",
+      "orientation_css": "landscape",
+      "output": "lanskap",
+      "gpu_acceleration": {
+        "backends": [
+          "panfrost",
+          "mali"
+        ],
+        "preferred": "panfrost",
+        "mode": "deklarasi-manual",
+        "bridge_exposed": false,
+        "catatan": "Profil tampilan. GPU ponsel tidak diekspos bridge; pengukuran WebGPU dilakukan manual di perangkat."
+      }
+    },
+    "chip": {
+      "modules": 9,
+      "score": "100/100"
+    },
+    "dataset": {
+      "agent": "dataset",
+      "file": "dataset.md",
+      "cli": "dataset-cli",
+      "engine": "dataset/builder.py",
+      "entrypoint": "dataset/dataset_cli.py",
+      "tom05_flag": "tom05 --dataset [perintah]",
+      "format": "JSONL instruction -> response",
+      "default_output": "dataset/data/tom05_dataset.jsonl",
+      "kind": "doc-derived",
+      "is_neural_model": false,
+      "performs_training": false,
+      "records_trained": false,
+      "note": "Agen ini hanya menyiapkan dan memvalidasi dataset berlabel milik pemilik. Bukan model neural, tidak memuat bobot, dan tidak melakukan training."
+    },
+    "provider": {
+      "catalog": "config/tom05-provider-models.json",
+      "proxied_models": 94,
+      "served_via": "GET /v1/models",
+      "approval": "surat-persetujuan-tom05-model.md",
+      "note": "Model pihak ketiga diteruskan (proxied); bukan model baru tom05, lisensi tetap pada pemiliknya.",
+      "ctl": 100000000,
+      "ctl_all_models": true
+    },
+    "parity": {
+      "alias": "tom05/tom05-flash-free",
+      "upstream": "opencode/hy4-flash-free",
+      "declared_model": "opencode/deepseek-v4.1-flash-free",
+      "verify": [
+        "tom05 --parity",
+        "tom05 --parity-model opencode/deepseek-v4.1-flash-free",
+        "tom05 --parity-all"
+      ],
+      "status": "SAMA",
+      "catatan": "Alias dan deklarasi model proxied dicocokkan lintas katalog; bukan model terlatih baru tom05."
+    },
+    "domain_analysis": {
+      "name": "Analisis Konteks & Riset Terkini",
+      "mode": "deklaratif",
+      "model": "tom05/tom05-flash-free",
+      "source_type": "artikel publik",
+      "catatan": "Kemampuan analitik bawaan model dasar (alias opencode/hy4-flash-free), bukan pelatihan baru: merangkum fakta, menghubungkan ke kebutuhan IT Agenty, dan mengutip sumber.",
+      "worked_example": {
+        "topik": "Peluncuran batch ke-8 megaconstellasi internet Guowang",
+        "sumber": "https://www.space.com/space-exploration/launches-spacecraft/china-launches-8th-batch-satellites-guowang-satnet-internet-megaconstellation-video",
+        "penerbit": "Space.com (Future US)",
+        "tanggal": "2025-08-13",
+        "fakta": {
+          "konstelasi": "Guowang ('jaringan nasional'), dioperasikan China Satnet (didirikan 2021)",
+          "target_satelit": 13000,
+          "peluncuran": "Long March 5B dari Wenchang, Hainan, ke orbit Bumi rendah (LEO)",
+          "batch": "ke-8; keempat dalam kurang dari tiga minggu",
+          "satelit_per_peluncuran": "8-10 (Starlink: 24-28)",
+          "pembanding": [
+            "Starlink ~8.100 aktif",
+            "Qianfan ('Thousand Sails')",
+            "Project Kuiper ~3.200"
+          ]
+        },
+        "hubungan_dengan_kebutuhan": {
+          "konektivitas": "Backhaul satelit LEO untuk simpul agen/SOC terdistribusi di lokasi tanpa jaringan terestrial.",
+          "strategi": "Kadensi peluncuran yang konsisten, bukan satu terobosan — sejalan dengan STRATEGI-GLOBAL.md §2 tentang growth sebagai sistem.",
+          "perangkat": "Megaconstellasi adalah komputasi tepi; relevan dengan tom05_soc dan agen hardware."
+        },
+        "batas": "Ringkasan fakta + tautan + atribusi; tidak menyalin konten berhak cipta; bukan klaim lisensi, model baru, atau akses jaringan pihak ketiga."
+      }
+    },
+    "safety": {
+      "credentials_in_chat": false,
+      "network_mode": "loopback",
+      "data_extraction": false,
+      "unlimited_authorization": false
+    }
+  },
+  "default": "tom05/tom05-flash-free",
+  "ctl": 100000000,
+  "ctl_note": "Deklarasi batas konteks (ctl) untuk kompaksi klien/OpenCode, bukan kapasitas fisik dan bukan klaim atas model pihak ketiga; lisensi tetap pada pemilik masing-masing.",
+  "ctl_updated": "2026-11-22"
+}

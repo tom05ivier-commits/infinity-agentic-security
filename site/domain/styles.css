@@ -1,0 +1,29 @@
+/*
+  SPDX-License-Identifier: Tom05ivier-commits-1.0
+  Copyright (c) 2026 Tomi vier
+  Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+*/
+:root { color-scheme: light; --merah: #b91c2e; --garis: #e5e7eb; --muted: #6b7280; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 15px/1.6 system-ui, sans-serif; background: #f8fafc; color: #111827; }
+.wrap { width: min(920px, 92vw); margin: 0 auto; }
+.topbar { background: #111827; color: #f9fafb; padding: 12px 0; }
+.topbar .wrap { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.topbar a { color: #fecaca; margin-left: 14px; text-decoration: none; }
+.hero { padding: 34px 0 18px; }
+h1 { margin: 0 0 8px; font-size: 30px; }
+h2 { font-size: 19px; margin: 0 0 12px; }
+.panel { background: #fff; border: 1px solid var(--garis); border-radius: 12px; padding: 20px; margin: 0 0 18px; }
+form { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; }
+label { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+input, select { padding: 9px 11px; border: 1px solid var(--garis); border-radius: 8px; font: inherit; }
+button { padding: 9px 14px; border: 0; border-radius: 8px; background: var(--merah); color: #fff; cursor: pointer; font: inherit; }
+button.danger { background: #374151; }
+.grid { list-style: none; padding: 0; display: grid; gap: 8px; margin: 16px 0 0; }
+.grid li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 12px; border: 1px solid var(--garis); border-radius: 8px; }
+code, pre { background: #f3f4f6; padding: 2px 5px; border-radius: 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.muted { color: var(--muted); font-size: 13px; }
+.ok { color: #166534; }
+.bad { color: #991b1b; }
+a { color: var(--merah); }

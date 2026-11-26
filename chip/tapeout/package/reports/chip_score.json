@@ -1,0 +1,83 @@
+{
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "generated_at": "2026-11-26T15:35:27.385355+00:00",
+  "model": "opencode/hy4-flash-free",
+  "score": 100,
+  "maximum": 100,
+  "status": "PERFECT",
+  "grade": "100/100",
+  "checks": [
+    {
+      "kriteria": "lisensi",
+      "label": "Header SPDX & copyright pada RTL/modul inti",
+      "pass": true,
+      "points": 10,
+      "detail": "74 berkas diperiksa; tanpa header: tidak ada"
+    },
+    {
+      "kriteria": "model",
+      "label": "Verifikasi RTL terhadap model referensi",
+      "pass": true,
+      "points": 10,
+      "detail": "status=PASS, modul=11, vektor=4916"
+    },
+    {
+      "kriteria": "sintesis",
+      "label": "Sintesis gate-level & netlist",
+      "pass": true,
+      "points": 10,
+      "detail": "status=PASS, sel=431, netlist=11"
+    },
+    {
+      "kriteria": "iverilog",
+      "label": "Lint, kompilasi, vvp, dan waveform",
+      "pass": true,
+      "points": 10,
+      "detail": "status=PASS, checks=16200, warning=0/0, vcd=True"
+    },
+    {
+      "kriteria": "browser",
+      "label": "Preset simulator hy4 di browser",
+      "pass": true,
+      "points": 10,
+      "detail": "status=PASS, preset=6, error=0, eksternal=0"
+    },
+    {
+      "kriteria": "testbench",
+      "label": "Cakupan seluruh modul di testbench",
+      "pass": true,
+      "points": 10,
+      "detail": "modul terinstansi=11/11"
+    },
+    {
+      "kriteria": "metadata",
+      "label": "Metadata hy4_chip.json",
+      "pass": true,
+      "points": 10,
+      "detail": "model=opencode/hy4-flash-free, modul=['hy4_dot4', 'hy4_quant', 'hy4_top', 'index_match4', 'tom05_ai_accel', 'tom05_soc']"
+    },
+    {
+      "kriteria": "tes",
+      "label": "Berkas tes chip tersedia",
+      "pass": true,
+      "points": 10,
+      "detail": "berkas tes=3/3"
+    },
+    {
+      "kriteria": "dokumentasi",
+      "label": "README memuat modul & cara verifikasi",
+      "pass": true,
+      "points": 10,
+      "detail": "dokumen lengkap; kurang=tidak ada"
+    },
+    {
+      "kriteria": "privasi",
+      "label": "Kesiapan rilis publik",
+      "pass": true,
+      "points": 10,
+      "detail": "rilis=SIAP, temuan=0"
+    }
+  ],
+  "failed": []
+}

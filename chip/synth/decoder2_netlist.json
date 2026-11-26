@@ -1,0 +1,207 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "decoder2": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "chip/rtl/decoder2.v:5.1-10.10"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "y0": {
+          "direction": "output",
+          "bits": [ 4 ]
+        },
+        "y1": {
+          "direction": "output",
+          "bits": [ 5 ]
+        },
+        "y2": {
+          "direction": "output",
+          "bits": [ 6 ]
+        },
+        "y3": {
+          "direction": "output",
+          "bits": [ 7 ]
+        }
+      },
+      "cells": {
+        "$auto$simplemap.cc:38:simplemap_not$87": {
+          "hide_name": 1,
+          "type": "$_NOT_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:7.19-7.21"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 8 ]
+          }
+        },
+        "$auto$simplemap.cc:38:simplemap_not$89": {
+          "hide_name": 1,
+          "type": "$_NOT_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:8.15-8.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "Y": [ 9 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$86": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:6.15-6.22"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9 ],
+            "B": [ 8 ],
+            "Y": [ 4 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$88": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:7.15-7.21"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 8 ],
+            "Y": [ 5 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$90": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:8.15-8.21"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9 ],
+            "B": [ 3 ],
+            "Y": [ 6 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$91": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:9.15-9.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 3 ],
+            "Y": [ 7 ]
+          }
+        }
+      },
+      "netnames": {
+        "$not$chip/rtl/decoder2.v:6$1_Y": {
+          "hide_name": 1,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:6.15-6.17"
+          }
+        },
+        "$not$chip/rtl/decoder2.v:6$2_Y": {
+          "hide_name": 1,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:6.20-6.22"
+          }
+        },
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:5.23-5.24"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:5.26-5.27"
+          }
+        },
+        "y0": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:5.36-5.38"
+          }
+        },
+        "y1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:5.40-5.42"
+          }
+        },
+        "y2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:5.44-5.46"
+          }
+        },
+        "y3": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "chip/rtl/decoder2.v:5.48-5.50"
+          }
+        }
+      }
+    }
+  }
+}

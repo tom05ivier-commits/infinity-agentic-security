@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "verifikasi": {
+    "lolos": true,
+    "modul": 2,
+    "vektor": 16896,
+    "results": [
+      {
+        "module": "firewall_match",
+        "vectors": 512,
+        "mismatches": 0,
+        "status": "PASS",
+        "details": [],
+        "license": "Tom05ivier-commits-1.0",
+        "owner": "Tomi vier"
+      },
+      {
+        "module": "firewall_decide",
+        "vectors": 16384,
+        "mismatches": 0,
+        "status": "PASS",
+        "details": [],
+        "license": "Tom05ivier-commits-1.0",
+        "owner": "Tomi vier"
+      }
+    ]
+  },
+  "mutation_testing": {
+    "total": 4,
+    "terdeteksi": 4,
+    "mutants": [
+      {
+        "module": "firewall_match",
+        "patch": "& ~(p3 ^ r3)",
+        "status": "TERDETEKSI",
+        "detected": true,
+        "mismatches": 160
+      },
+      {
+        "module": "firewall_match",
+        "patch": "& enable",
+        "status": "TERDETEKSI",
+        "detected": true,
+        "mismatches": 32
+      },
+      {
+        "module": "firewall_decide",
+        "patch": "assign decision = allow_hit & ~deny_hit;",
+        "status": "TERDETEKSI",
+        "detected": true,
+        "mismatches": 15392
+      },
+      {
+        "module": "firewall_decide",
+        "patch": "& deny_en",
+        "status": "TERDETEKSI",
+        "detected": true,
+        "mismatches": 256
+      }
+    ],
+    "catatan": "Bug disuntik ke salinan RTL; lolos berarti celah verifikasi."
+  },
+  "batas": "Prototype 4-bit; bukan pengganti firewall kernel (CapBnd=0).",
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier"
+}

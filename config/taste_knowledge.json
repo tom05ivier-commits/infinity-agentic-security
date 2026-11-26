@@ -1,0 +1,23 @@
+{
+  "spdx": "SPDX-License-Identifier: Tom05ivier-commits-1.0",
+  "copyright": "Copyright (c) 2026 Tomi vier",
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "version": 1,
+  "schema": "tom05-taste-knowledge/1",
+  "note": "Pengetahuan simbolik tentang rasa sebagai pelengkap lapisan indra. Bukan data biometrik, bukan keluaran sensor lidah, bukan penilaian medis, dan bukan data pribadi.",
+  "sensor": false,
+  "source_kind": "symbolic-knowledge",
+  "categories": [
+    {"id": "manis", "deskripsi": "kategori rasa dasar yang dikenali secara simbolik"},
+    {"id": "asin", "deskripsi": "kategori rasa dasar yang dikenali secara simbolik"},
+    {"id": "asam", "deskripsi": "kategori rasa dasar yang dikenali secara simbolik"},
+    {"id": "pahit", "deskripsi": "kategori rasa dasar yang dikenali secara simbolik"},
+    {"id": "umami", "deskripsi": "kategori rasa gurih yang dikenali secara simbolik"}
+  ],
+  "batasan": [
+    "Tidak ada sensor kimia atau lidah elektronik yang terhubung ke sistem ini.",
+    "Kategori hanya dipakai untuk penalaran simbolik dan dokumentasi, bukan pengukuran.",
+    "Tidak menyimpan preferensi, konsumsi, atau data kesehatan subjek mana pun."
+  ]
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+  SPDX-License-Identifier: Tom05ivier-commits-1.0
+  Copyright (c) 2026 Tomi vier
+  Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+-->
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panduan Domain Gratis — IT Agenty</title>
+  <meta name="theme-color" content="#e14b4b" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <strong>IT Agenty — Domain Gratis</strong>
+      <nav><a href="/">Kembali ke generator</a></nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Panduan domain gratis</h1>
+      <p>Daftar opsi yang tersedia dari situs ini. IT Agenty tidak menjamin ketersediaan layanan pihak ketiga dan tidak menghapus ketentuan mereka.</p>
+    </section>
+    <section class="panel">
+      <h2>Opsi</h2>
+      <div id="guide-list"></div>
+    </section>
+    <section class="panel">
+      <h2>Cara pakai subdomain lokal</h2>
+      <ol>
+        <li>Daftarkan nama di halaman generator, misalnya <code>ai-chip</code>.</li>
+        <li>Tekan tombol pemasangan lalu konfirmasi. Blok <code># BEGIN AGENTY-LOCAL-DOMAINS</code> ditulis ke <code>/etc/hosts</code> dengan backup.</li>
+        <li>Buka <code>http://ai-chip.agenty.local:8783/status</code> di perangkat ini.</li>
+      </ol>
+      <p class="muted">Subdomain ini hanya berfungsi di perangkat tempat blok hosts dipasang, bukan DNS publik.</p>
+    </section>
+    <section class="panel">
+      <h2>Cara pakai Dynamic DNS</h2>
+      <p>Siapkan akun di penyedia, simpan token di environment, lalu jalankan:</p>
+      <pre>python3 system/domain_cli.py ddns-status
+python3 system/domain_cli.py ddns-update --provider duckdns --domain nama.duckdns.org --authorize --ttl 120</pre>
+      <p class="muted">Tanpa <code>--authorize</code>, perintah ditolak. Token tidak pernah dicetak atau disimpan oleh IT Agenty.</p>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

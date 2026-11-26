@@ -1,0 +1,76 @@
+{
+  "status": "SIAP",
+  "timestamp": "2026-11-24T10:25:50.864267+00:00",
+  "perintah": "prepare_training",
+  "performs_training": false,
+  "dataset": "dataset/data/tom05_dataset_full.jsonl",
+  "records": 400,
+  "validation": {
+    "ok": true,
+    "count": 400,
+    "errors": []
+  },
+  "privacy": {
+    "records": 400,
+    "flagged": 0,
+    "findings": {
+      "email": 0,
+      "whatsapp": 0,
+      "tanda_tangan": 0,
+      "katasandi": 0,
+      "tanggal_lahir": 0,
+      "lokasi": 0,
+      "github_token": 0,
+      "github_pat": 0,
+      "openai_key": 0,
+      "bearer": 0,
+      "assignment": 0
+    }
+  },
+  "stats": {
+    "records": 400,
+    "sources": 71,
+    "unique_instructions": 400,
+    "avg_response_chars": 527.9,
+    "trained": false,
+    "license": "Tom05ivier-commits-1.0"
+  },
+  "split": {
+    "seed": 42,
+    "val_frac": 0.2,
+    "train": 320,
+    "val": 80,
+    "train_file": "dataset/data/tom05_dataset_full.train.jsonl",
+    "val_file": "dataset/data/tom05_dataset_full.val.jsonl"
+  },
+  "alpaca": {
+    "file": "dataset/data/tom05_alpaca.jsonl",
+    "records": 400
+  },
+  "proxy": {
+    "status": "AKTIF",
+    "provider": "tom05",
+    "model": "tom05-flash-free",
+    "proxied_models": 94
+  },
+  "prasyarat_training": {
+    "dataset_agent": "tersedia",
+    "training_siap": false,
+    "pustaka_ml": {
+      "torch": false,
+      "tensorflow": false,
+      "jax": false,
+      "transformers": false,
+      "datasets": false,
+      "llama_cpp": false,
+      "onnxruntime": false
+    },
+    "bobot_ditemukan": [],
+    "gpu_terdeteksi": false,
+    "catatan": "Agen CLI ini hanya menyiapkan/memvalidasi dataset. Training nyata membutuhkan pustaka ML, bobot dasar milik pemilik, dan GPU — semuanya tidak tersedia di lingkungan ini saat pemeriksaan.",
+    "license": "Tom05ivier-commits-1.0"
+  },
+  "catatan": "Ini persiapan data, bukan training. tom05-flash-free tetap alias/proxy. Training nyata hanya dengan pustaka ML, bobot model dasar berlisensi milik pemilik, GPU, dan izin tertulis.",
+  "trained": false,
+  "license": "Tom05ivier-commits-1.0"
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "tom05-neuro25-chip/1",
+  "generated_at": "2026-11-26T15:27:09.807580+00:00",
+  "status": "PASS",
+  "name": "NEURO-25",
+  "module": "tom05_neuro25",
+  "target": "cognitive-signal-simulation",
+  "cognitive_stages": [
+    "indra",
+    "memori",
+    "perencanaan",
+    "aksi"
+  ],
+  "profile": {
+    "age_reference_years": 25,
+    "kind": "synthetic-adult-reference",
+    "gain": 2,
+    "note": "Usia hanya penanda konfigurasi simulasi. Bukan data biologis, bukan pengukuran otak, dan tidak mewakili subjek sungguhan."
+  },
+  "evidence": {
+    "model": {
+      "status": "PASS",
+      "vectors": 8192,
+      "mismatches": 0
+    },
+    "iverilog": {
+      "status": "PASS",
+      "vectors": 8192,
+      "checks": 49152,
+      "errors": 0,
+      "lint_warnings": 0,
+      "compile_warnings": 0
+    },
+    "synthesis": {
+      "status": "PASS",
+      "cells": 13
+    }
+  },
+  "safety": {
+    "consent_gate": true,
+    "action_blocked_without_gate": true,
+    "neural_interface": false,
+    "implantable": false,
+    "stimulation": false,
+    "subject_data": false,
+    "network_transmission": false,
+    "offline_verification": true
+  },
+  "fabrication": "NOT_READY",
+  "clinical_validation": "NOT_VALIDATED",
+  "medical_device": false,
+  "disclaimer": "Desain RTL untuk simulasi dan pembelajaran. Bukan alat medis, bukan BCI, tidak terhubung ke otak manusia hidup, tidak membaca atau mengirim data neural, dan tidak memberikan stimulasi.",
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier"
+}

@@ -1,0 +1,928 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "tom05_soc": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "chip/rtl/tom05_soc.v:15.1-28.10"
+      },
+      "ports": {
+        "cam0": {
+          "direction": "input",
+          "bits": [ 2, 3 ]
+        },
+        "cam1": {
+          "direction": "input",
+          "bits": [ 4, 5 ]
+        },
+        "cam2": {
+          "direction": "input",
+          "bits": [ 6, 7 ]
+        },
+        "cam3": {
+          "direction": "input",
+          "bits": [ 8, 9 ]
+        },
+        "mode": {
+          "direction": "input",
+          "bits": [ 10 ]
+        },
+        "irq_clear": {
+          "direction": "input",
+          "bits": [ 11 ]
+        },
+        "score": {
+          "direction": "output",
+          "bits": [ 12, 13, 14, 15 ]
+        },
+        "level": {
+          "direction": "output",
+          "bits": [ 14, 15 ]
+        },
+        "irq": {
+          "direction": "output",
+          "bits": [ 16 ]
+        },
+        "ready": {
+          "direction": "output",
+          "bits": [ "1" ]
+        }
+      },
+      "cells": {
+        "$auto$simplemap.cc:38:simplemap_not$104": {
+          "hide_name": 1,
+          "type": "$_NOT_",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 11 ],
+            "Y": [ 17 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1044": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 18 ],
+            "Y": [ 19 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$105": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:26.16-26.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15 ],
+            "B": [ 17 ],
+            "Y": [ 16 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1076": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 6 ],
+            "Y": [ 20 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1108": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 6 ],
+            "Y": [ 18 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1272": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.36|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:248.19-248.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5 ],
+            "B": [ 21 ],
+            "Y": [ 22 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1346": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:240.19-240.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 23 ],
+            "B": [ 24 ],
+            "Y": [ 25 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1414": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:248.19-248.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 26 ],
+            "B": [ 27 ],
+            "Y": [ 28 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1430": {
+          "hide_name": 1,
+          "type": "$_OR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:240.12-240.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 29 ],
+            "B": [ 25 ],
+            "Y": [ 27 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1472": {
+          "hide_name": 1,
+          "type": "$_OR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:248.12-248.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 30 ],
+            "B": [ 28 ],
+            "Y": [ 31 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1630": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.69|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:240.19-240.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 32 ],
+            "B": [ 33 ],
+            "Y": [ 34 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1698": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.69|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:248.19-248.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 35 ],
+            "B": [ 34 ],
+            "Y": [ 36 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$1840": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:248.19-248.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 18 ],
+            "Y": [ 37 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$226": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.36|/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5 ],
+            "B": [ 21 ],
+            "Y": [ 38 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$258": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.36|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 4 ],
+            "Y": [ 39 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$290": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.36|/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 4 ],
+            "Y": [ 21 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$560": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 23 ],
+            "B": [ 24 ],
+            "Y": [ 32 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$561": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 26 ],
+            "B": [ 27 ],
+            "Y": [ 40 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$562": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 41 ],
+            "B": [ 31 ],
+            "Y": [ 42 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$592": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6 ],
+            "B": [ 2 ],
+            "Y": [ 43 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$593": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 20 ],
+            "B": [ 39 ],
+            "Y": [ 23 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$594": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 19 ],
+            "B": [ 38 ],
+            "Y": [ 26 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$595": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 37 ],
+            "B": [ 22 ],
+            "Y": [ 41 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$624": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6 ],
+            "B": [ 2 ],
+            "Y": [ 24 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$625": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 20 ],
+            "B": [ 39 ],
+            "Y": [ 29 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$626": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 19 ],
+            "B": [ 38 ],
+            "Y": [ 30 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$723": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.62|chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 44 ],
+            "B": [ 45 ],
+            "Y": [ 46 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$755": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.62|chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8 ],
+            "B": [ 40 ],
+            "Y": [ 35 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$756": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.62|chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 9 ],
+            "B": [ 42 ],
+            "Y": [ 44 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$787": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.62|chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8 ],
+            "B": [ 40 ],
+            "Y": [ 45 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$882": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.69|/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 32 ],
+            "B": [ 33 ],
+            "Y": [ 13 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$883": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.69|/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 35 ],
+            "B": [ 34 ],
+            "Y": [ 14 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$884": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.69|/usr/bin/../share/yosys/techmap.v:289.13-289.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 46 ],
+            "B": [ 36 ],
+            "Y": [ 15 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$914": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.69|/usr/bin/../share/yosys/techmap.v:288.13-288.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10 ],
+            "B": [ 43 ],
+            "Y": [ 12 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$946": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.69|/usr/bin/../share/yosys/techmap.v:286.42-286.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10 ],
+            "B": [ 43 ],
+            "Y": [ 33 ]
+          }
+        }
+      },
+      "netnames": {
+        "$auto$maccmap.cc:240:synth$146.CO": {
+          "hide_name": 1,
+          "bits": [ "0", 18, 37, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/usr/bin/../share/yosys/techmap.v:274.23-274.25"
+          }
+        },
+        "$auto$maccmap.cc:240:synth$146.X": {
+          "hide_name": 1,
+          "bits": [ 6, 20, 7, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/usr/bin/../share/yosys/techmap.v:270.23-270.24"
+          }
+        },
+        "$auto$maccmap.cc:240:synth$146.Y": {
+          "hide_name": 1,
+          "bits": [ 6, 20, 19, 37, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/usr/bin/../share/yosys/techmap.v:270.26-270.27"
+          }
+        },
+        "$auto$rtlil.cc:2401:Not$16": {
+          "hide_name": 1,
+          "bits": [ 17 ],
+          "attributes": {
+          }
+        },
+        "$techmap$add$chip/rtl/tom05_soc.v:24$2.$auto$alumacc.cc:485:replace_alu$94.CO": {
+          "hide_name": 1,
+          "bits": [ "0", 21, 22, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/tom05_soc.v:24.19-24.36|/usr/bin/../share/yosys/techmap.v:274.23-274.25"
+          }
+        },
+        "$techmap$add$chip/rtl/tom05_soc.v:24$2.$auto$alumacc.cc:485:replace_alu$94.X": {
+          "hide_name": 1,
+          "bits": [ 2, 39, 5, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/tom05_soc.v:24.19-24.36|/usr/bin/../share/yosys/techmap.v:270.23-270.24"
+          }
+        },
+        "$techmap$add$chip/rtl/tom05_soc.v:24$2.$auto$alumacc.cc:485:replace_alu$94.Y": {
+          "hide_name": 1,
+          "bits": [ 2, 39, 38, 22, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/tom05_soc.v:24.19-24.36|/usr/bin/../share/yosys/techmap.v:270.26-270.27"
+          }
+        },
+        "$techmap$add$chip/rtl/tom05_soc.v:24$4.$auto$alumacc.cc:485:replace_alu$98.CO": {
+          "hide_name": 1,
+          "bits": [ 24, 27, 31, 47, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:274.23-274.25",
+            "unused_bits": "3"
+          }
+        },
+        "$techmap$add$chip/rtl/tom05_soc.v:24$4.$auto$alumacc.cc:485:replace_alu$98.X": {
+          "hide_name": 1,
+          "bits": [ 43, 23, 26, 41, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:270.23-270.24"
+          }
+        },
+        "$techmap$add$chip/rtl/tom05_soc.v:24$4.$auto$alumacc.cc:485:replace_alu$98.Y": {
+          "hide_name": 1,
+          "bits": [ 43, 32, 40, 42, 47, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:270.26-270.27",
+            "unused_bits": "4"
+          }
+        },
+        "$techmap$add$chip/rtl/tom05_soc.v:24$4.$auto$alumacc.cc:485:replace_alu$98.lcu.G": {
+          "hide_name": 1,
+          "bits": [ 24, 29, 30, 48, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:214.23-214.24",
+            "unused_bits": "3"
+          }
+        },
+        "$techmap$add$chip/rtl/tom05_soc.v:24$6.$auto$alumacc.cc:485:replace_alu$98.CO": {
+          "hide_name": 1,
+          "bits": [ "0", "0", 45, 49, 50, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/tom05_soc.v:24.19-24.62|chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:274.23-274.25",
+            "unused_bits": "3 4"
+          }
+        },
+        "$techmap$add$chip/rtl/tom05_soc.v:24$6.$auto$alumacc.cc:485:replace_alu$98.X": {
+          "hide_name": 1,
+          "bits": [ 43, 32, 35, 44, 47, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/tom05_soc.v:24.19-24.62|chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:270.23-270.24",
+            "unused_bits": "4"
+          }
+        },
+        "$techmap$add$chip/rtl/tom05_soc.v:24$6.$auto$alumacc.cc:485:replace_alu$98.Y": {
+          "hide_name": 1,
+          "bits": [ 43, 32, 35, 46, 51, 50, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/tom05_soc.v:24.19-24.62|chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:270.26-270.27",
+            "unused_bits": "4 5"
+          }
+        },
+        "$techmap$add$chip/rtl/tom05_soc.v:24$7.$auto$alumacc.cc:485:replace_alu$101.CO": {
+          "hide_name": 1,
+          "bits": [ 33, 34, 36, 52, 53, 54, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "chip/rtl/tom05_soc.v:24.19-24.69|/usr/bin/../share/yosys/techmap.v:274.23-274.25",
+            "unused_bits": "3 4 5"
+          }
+        },
+        "$techmap$techmap$add$chip/rtl/tom05_soc.v:24$4.$auto$alumacc.cc:485:replace_alu$98.lcu.$and$/usr/bin/../share/yosys/techmap.v:240$324_Y": {
+          "hide_name": 1,
+          "bits": [ 25 ],
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:240.19-240.41"
+          }
+        },
+        "$techmap$techmap$add$chip/rtl/tom05_soc.v:24$4.$auto$alumacc.cc:485:replace_alu$98.lcu.$and$/usr/bin/../share/yosys/techmap.v:248$450_Y": {
+          "hide_name": 1,
+          "bits": [ 28 ],
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:24.19-24.49|/usr/bin/../share/yosys/techmap.v:286.27-286.69|/usr/bin/../share/yosys/techmap.v:248.19-248.41"
+          }
+        },
+        "cam0": {
+          "hide_name": 0,
+          "bits": [ 2, 3 ],
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:16.15-16.19"
+          }
+        },
+        "cam1": {
+          "hide_name": 0,
+          "bits": [ 4, 5 ],
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:16.21-16.25"
+          }
+        },
+        "cam2": {
+          "hide_name": 0,
+          "bits": [ 6, 7 ],
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:16.27-16.31"
+          }
+        },
+        "cam3": {
+          "hide_name": 0,
+          "bits": [ 8, 9 ],
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:16.33-16.37"
+          }
+        },
+        "irq": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:21.10-21.13"
+          }
+        },
+        "irq_clear": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:18.9-18.18"
+          }
+        },
+        "level": {
+          "hide_name": 0,
+          "bits": [ 14, 15 ],
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:20.16-20.21"
+          }
+        },
+        "mode": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:17.9-17.13"
+          }
+        },
+        "ready": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:22.10-22.15"
+          }
+        },
+        "score": {
+          "hide_name": 0,
+          "bits": [ 12, 13, 14, 15 ],
+          "attributes": {
+            "src": "chip/rtl/tom05_soc.v:19.16-19.21"
+          }
+        }
+      }
+    }
+  }
+}

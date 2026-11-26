@@ -1,0 +1,64 @@
+{
+  "name": "hy4-accelerator",
+  "model": "opencode/hy4-flash-free",
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "description": "Inti akselerator hy4: skor berbobot empat fitur, kuantisasi dua bit, dan modul top-level.",
+  "modules": [
+    {
+      "name": "hy4_dot4",
+      "rtl": "rtl/hy4_dot4.v",
+      "inputs": ["a0[1:0]", "a1[1:0]", "a2[1:0]", "a3[1:0]"],
+      "output": "y[3:0]",
+      "function": "y = (a0 + 2*a1 + 3*a2 + 4*a3) mod 16"
+    },
+    {
+      "name": "hy4_quant",
+      "rtl": "rtl/hy4_quant.v",
+      "inputs": ["score[3:0]"],
+      "output": "level[1:0]",
+      "function": "level = score >> 2"
+    },
+    {
+      "name": "hy4_top",
+      "rtl": "rtl/hy4_top.v",
+      "inputs": ["a0[1:0]", "a1[1:0]", "a2[1:0]", "a3[1:0]"],
+      "output": "level[1:0]",
+      "function": "level = ((a0 + 2*a1 + 3*a2 + 4*a3) mod 16) >> 2"
+    },
+    {
+      "name": "index_match4",
+      "rtl": "rtl/index_match4.v",
+      "inputs": ["q[3:0]", "k[3:0]"],
+      "output": "score[2:0]",
+      "function": "score = popcount(q & k), dengan q masker query dan k masker kata kunci",
+      "description": "Akselerator irisan himpunan untuk skor kata kunci tools/safe_data_index.py."
+    },
+    {
+      "name": "tom05_soc",
+      "rtl": "rtl/tom05_soc.v",
+      "inputs": ["cam0[1:0]", "cam1[1:0]", "cam2[1:0]", "cam3[1:0]", "mode", "irq_clear"],
+      "output": "score[3:0], level[1:0], irq, ready",
+      "function": "score = (cam0 + 2*cam1 + 3*cam2 + 4*cam3 + mode) mod 16; level = score >> 2; irq = level[1] & ~irq_clear; ready = 1",
+      "target": "android-smartphone",
+      "description": "System-on-Chip tom05: fusi sensor 4 jalur, kuantisasi hy4, dan interrupt untuk perangkat Android."
+    },
+    {
+      "name": "tom05_ai_accel",
+      "rtl": "rtl/tom05_ai_accel.v",
+      "inputs": ["a0[1:0]", "a1[1:0]", "a2[1:0]", "a3[1:0]", "mode[1:0]", "irq_clear"],
+      "output": "score[4:0], level[1:0], hit, irq, ready",
+      "function": "score = profil(mode) dari {TENSOR: a0+2a1+3a2+4a3, LPU: 4a0+3a1+2a2+a3, NEARMEM: bobot SRAM bila hit, MESH: 2*(a0+a1+a2+a3)}; level = score>>3; hit = bit tinggi aktivasi; irq = level[1] & ~irq_clear",
+      "target": "ai-inference-accelerator",
+      "inspiration": "AIMultiple Top 30+ AI Chip Makers (NVIDIA, AMD, Groq, d-Matrix, Qualcomm, Cerebras) — ide arsitektur, bukan salinan IP",
+      "fabrication": "NOT_READY",
+      "description": "Akselerator inferensi AI tom05 (TAI-1): empat profil dataflow rekonfigurabel, kuantisasi 2-bit, dan flag residensi memori. Desain orisinal IT Agenty."
+    }
+  ],
+  "verification": {
+    "reference_model": "chip/reference.py",
+    "cli": "python3 chip/chip_cli.py verify",
+    "report": "chip/reports/chip_verification.json",
+    "browser": "/chip/simulator.html"
+  }
+}

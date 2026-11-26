@@ -1,0 +1,15 @@
+{
+  "module": "tom05_neuro25",
+  "timestamp": "2026-11-26T15:27:08.589794+00:00",
+  "compiler": "Icarus Verilog version 12.0 (stable) ()",
+  "lint_warnings": 0,
+  "compile_warnings": 0,
+  "errors": 0,
+  "vectors": 8192,
+  "checks": 49152,
+  "status": "PASS",
+  "reasons": [],
+  "vcd": "chip/reports/tb_tom05_neuro25.vcd",
+  "duration_ms": 816,
+  "simulation_output": "VCD info: dumpfile /root/workspace/chip/reports/tb_tom05_neuro25.vcd opened for output.\n=== NEURO-25 synthetic signal testbench ===\nVECTOR tom05_neuro25 8192 0\nTOTAL 49152 0\nPASS: semua vektor sintetis benar.\n/root/workspace/chip/tb/tb_neuro25.v:99: $finish called at 8192000 (1ps)\n"
+}

@@ -1,0 +1,162 @@
+{
+  "SPDX-License-Identifier": "Tom05ivier-commits-1.0",
+  "Copyright": "(c) 2026 Tomi vier",
+  "source": "chip khusus per agent dari registry system/services.json",
+  "note": "23 agent -> 23 chip khusus. Per chip: logika gate (ok = req & match, match = tag==ACC). tangible, reversibel, NO ketidaksesuaian vs srv_*.v utama. Enam agen agenty memakai model sama dengan level/ACC berbeda (tambah x2). Entri hy4 ditambahkan 26-11-2026 saat agen/CLI hy4 diaktifkan kembali.",
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "fabrication": "NOT_READY",
+  "created": "2026-11-22",
+  "agents": [
+    {
+      "agent": "analyst",
+      "chip": "cd_analyst",
+      "acc": 100,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "architect",
+      "chip": "cd_architect",
+      "acc": 101,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "asisten-manajer",
+      "chip": "cd_asistenmanajer",
+      "acc": 102,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "auditor",
+      "chip": "cd_auditor",
+      "acc": 103,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "chip",
+      "chip": "cd_chip",
+      "acc": 104,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "dataset",
+      "chip": "cd_dataset",
+      "acc": 105,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "doctor",
+      "chip": "cd_doctor",
+      "acc": 106,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "engineer",
+      "chip": "cd_engineer",
+      "acc": 107,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "firewall",
+      "chip": "cd_firewall",
+      "acc": 108,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "hardware",
+      "chip": "cd_hardware",
+      "acc": 109,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "owner-ceo",
+      "chip": "cd_ownerceo",
+      "acc": 110,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "platform",
+      "chip": "cd_platform",
+      "acc": 111,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "professor",
+      "chip": "cd_professor",
+      "acc": 112,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "ram",
+      "chip": "cd_ram",
+      "acc": 113,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "security",
+      "chip": "cd_security",
+      "acc": 114,
+      "purpose": "Verifikasi gate permanen mengikuti chip model retrieval (retrieval-grounded, trained:false)"
+    },
+    {
+      "agent": "agent-manager",
+      "chip": "cd_agentmanager",
+      "acc": 115,
+      "purpose": "Supervisor pengawas kesehatan agen/server lokal (read-only, audit, reversibel)."
+    },
+    {
+      "agent": "hy4",
+      "chip": "cd_hy4",
+      "acc": 116,
+      "purpose": "Agen hy4 yang diaktifkan kembali 26-11-2026; gate ACC 116 untuk verifikasi terhubung ke NEURO-25."
+    },
+    {
+      "agent": "agenty-1",
+      "chip": "cd_agenty1",
+      "acc": 200,
+      "model": "tom05/tom05-flash-free",
+      "level": 1,
+      "purpose": "Agen kustom agenty level 1 — model sama, gate ACC 200 (verifikasi exhaustif)."
+    },
+    {
+      "agent": "agenty-2",
+      "chip": "cd_agenty2",
+      "acc": 201,
+      "model": "tom05/tom05-flash-free",
+      "level": 2,
+      "purpose": "Agen kustom agenty level 2 — model sama, gate ACC 201 (verifikasi exhaustif)."
+    },
+    {
+      "agent": "agenty-3",
+      "chip": "cd_agenty3",
+      "acc": 202,
+      "model": "tom05/tom05-flash-free",
+      "level": 3,
+      "purpose": "Agen kustom agenty level 3 — model sama, gate ACC 202 (verifikasi exhaustif)."
+    },
+    {
+      "agent": "agenty-4",
+      "chip": "cd_agenty4",
+      "acc": 203,
+      "model": "tom05/tom05-flash-free",
+      "level": 4,
+      "purpose": "Agen kustom agenty level 4 — model sama, gate ACC 203 (verifikasi exhaustif)."
+    },
+    {
+      "agent": "agenty-5",
+      "chip": "cd_agenty5",
+      "acc": 204,
+      "model": "tom05/tom05-flash-free",
+      "level": 5,
+      "purpose": "Agen kustom agenty level 5 — model sama, gate ACC 204 (tambah x2)."
+    },
+    {
+      "agent": "agenty-6",
+      "chip": "cd_agenty6",
+      "acc": 205,
+      "model": "tom05/tom05-flash-free",
+      "level": 6,
+      "purpose": "Agen kustom agenty level 6 — model sama, gate ACC 205 (tambah x2)."
+    }
+  ]
+}

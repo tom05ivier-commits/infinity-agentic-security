@@ -1,0 +1,90 @@
+<!doctype html>
+<!--
+  SPDX-License-Identifier: Tom05ivier-commits-1.0
+  Copyright (c) 2026 Tomi vier
+  Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+-->
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tom05 — Ukur GPU Ponsel (WebGPU)</title>
+<style>
+ body{font:15px/1.5 system-ui,sans-serif;margin:0;padding:18px;background:#0f1420;color:#e8eef8}
+ h1{font-size:19px;margin:0 0 8px}
+ p.small{color:#9fb0c8;font-size:13px}
+ button{background:#2f6df6;color:#fff;border:0;border-radius:8px;padding:10px 14px;font-size:15px;cursor:pointer}
+ pre{white-space:pre-wrap;word-break:break-word;background:#182033;border:1px solid #2c3a55;border-radius:8px;padding:12px;min-height:90px}
+ .ok{color:#6ee7a8}.err{color:#ff8f8f}
+ .profile{margin:12px 0;padding:12px 14px;border:1px solid #2c3a55;border-radius:10px;background:#141d2e}
+ .profile strong{color:#5eead4;font-size:14px}
+ .profile div{font-size:13px;margin-top:4px;color:#cbd7ea}
+ .profile p.small{margin:8px 0 0}
+</style>
+</head>
+<body>
+<h1>Tom05 — Ukur GPU Ponsel</h1>
+<p class="small">Halaman ini berjalan sepenuhnya di perangkat Anda. Tidak ada data yang dikirim ke server.</p>
+<div class="profile">
+ <strong>Profil tampilan Tom05</strong>
+ <div>Orientasi: lanskap (landscape)</div>
+ <div>Akselerasi GPU: Panfrost / Mali &mdash; deklarasi-manual</div>
+ <p class="small">Backend hanya profil tampilan. GPU ponsel tidak diekspos bridge; pengukuran WebGPU berjalan lokal di perangkat.</p>
+</div>
+<button id="run">Jalankan pengukuran</button>
+<button id="copy">Salin hasil</button>
+<pre id="out">Tekan “Jalankan pengukuran”.</pre>
+<script>
+(function(){
+ "use strict";
+ var out = document.getElementById("out");
+ var result = null;
+ function fail(msg){ result = {benchmark:"tom05-webgpu", status:"GAGAL", alasan:msg}; out.textContent = JSON.stringify(result,null,2); }
+ function hex(n){ return "0x" + (n>>>0).toString(16); }
+ async function run(){
+  out.textContent = "Memeriksa WebGPU…";
+  if(!navigator.gpu){ fail("WEBGPU_TIDAK_TERSEDIA"); return; }
+  try{
+   var adapter = await navigator.gpu.requestAdapter({powerPreference:"high-performance"});
+   if(!adapter){ fail("ADAPTER_TIDAK_ADA"); return; }
+   var device = await adapter.requestDevice();
+   var info = adapter.info || {};
+   var module = device.createShaderModule({code:
+    "@group(0) @binding(0) var<storage, read_write> data: array<f32>;\n" +
+    "@compute @workgroup_size(64)\n" +
+    "fn main(@builtin(global_invocation_id) id: vec3<u32>){\n" +
+    " let i = id.x; if(i >= arrayLength(&data)) { return; }\n" +
+    " var v = data[i]; for(var k:u32=0u;k<256u;k=k+1u){ v = v + f32(k) * 0.0001; }\n" +
+    " data[i] = v;\n}"});
+   var n = 1 << 20;
+   var buffer = device.createBuffer({size:n*4, usage:GPUBufferUsage.STORAGE|GPUBufferUsage.COPY_DST|GPUBufferUsage.COPY_SRC});
+   var pipe = device.createComputePipeline({layout:"auto", compute:{module:module, entryPoint:"main"}});
+   var bind = device.createBindGroup({layout:pipe.getBindGroupLayout(0), entries:[{binding:0,resource:{buffer:buffer}}]});
+   var t0 = performance.now();
+   var enc = device.createCommandEncoder();
+   var pass = enc.beginComputePass(); pass.setPipeline(pipe); pass.setBindGroup(0,bind); pass.dispatchWorkgroups(Math.ceil(n/64)); pass.end();
+   device.queue.submit([enc.finish()]);
+   await device.queue.onSubmittedWorkDone();
+   var ms = performance.now()-t0;
+   result = {
+    benchmark:"tom05-webgpu",
+    status:"OK",
+    adapter:{vendor:String(info.vendor||""), architecture:String(info.architecture||""), device:String(info.device||""), description:String(info.description||"")},
+    limits:{maxComputeWorkgroupsPerDimension:adapter.limits.maxComputeWorkgroupsPerDimension, maxComputeInvocationsPerWorkgroup:adapter.limits.maxComputeInvocationsPerWorkgroup},
+    elems:n, iterations:256, elapsed_ms:Math.round(ms*100)/100,
+    orientation:"lanskap", gpu_backends:["panfrost","mali"], gpu_mode:"deklarasi-manual",
+    catatan:"Pengukuran lokal di browser ponsel; bukan kapasitas yang dijamin agen."
+   };
+   out.textContent = JSON.stringify(result,null,2);
+  }catch(e){ fail(String(e && e.message || e)); }
+ }
+ document.getElementById("run").addEventListener("click", run);
+ document.getElementById("copy").addEventListener("click", async function(){
+  if(!result){ out.textContent = "Jalankan pengukuran dulu."; return; }
+  try{ await navigator.clipboard.writeText(JSON.stringify(result)); out.textContent = "Hasil disalin. Kembali ke Tom05 lalu jalankan: tom05 --gpu-result"; }
+  catch(e){ out.textContent = "Gagal menyalin: " + String(e); }
+ });
+})();
+</script>
+</body>
+</html>

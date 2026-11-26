@@ -1,0 +1,52 @@
+{
+  "license": "Tom05ivier-commits-1.0",
+  "generated": "2026-11-22",
+  "note": "Peta koneksi OpenCode/tom05. Kandidat 14713 belum terhubung karena HTTP/TLS ECONNRESET; tidak ada kredensial di berkas ini.",
+  "endpoints": {
+    "opencode_server": {
+      "url": "http://127.0.0.1:8765",
+      "health": "/api/health",
+      "role": "aktif",
+      "keterangan": "Server OpenCode utama; dipakai CLI dan dashboard."
+    },
+    "opencode_api": {
+      "url": "http://127.0.0.1:8786",
+      "health": "/health",
+      "role": "aktif",
+      "keterangan": "Server API OpenCode terpisah yang dikelola supervisor; tidak mengganggu instansi sesi."
+    },
+    "opencode_api_42337": {
+      "url": "http://127.0.0.1:42337",
+      "health": "/health",
+      "role": "aktif",
+      "keterangan": "Instansi OpenCode tambahan yang terdaftar di supervisor. Port ephemeral sesi lain diawasi opencode-watch."
+    },
+    "cloud_code": {
+      "url": "http://127.0.0.1:8785",
+      "health": "/health",
+      "role": "aktif",
+      "keterangan": "Status read-only alat Claude Code, gcloud, kubectl, skaffold, minikube, dan code; keenamnya wajib."
+    },
+    "tom05_provider": {
+      "url": "http://127.0.0.1:8772",
+      "health": "/v1/health",
+      "role": "aktif",
+      "keterangan": "Provider OpenAI-compatible tom05; 94 alias model."
+    },
+    "copilot_bridge": {
+      "url": "http://127.0.0.1:8766",
+      "health": "/v1/health",
+      "role": "aktif",
+      "keterangan": "Bridge Copilot CLI ke model hy4-flash-free."
+    },
+    "port_14713": {
+      "url": "http://127.0.0.1:14713",
+      "host": "127.0.0.1",
+      "port": 14713,
+      "health": "/api/health",
+      "role": "kandidat",
+      "status": "tidak_terhubung",
+      "alasan": "TCP connect berhasil, tetapi HTTP/1.1 dan TLS direset (ECONNRESET); payload pendek menggantung. Protokol belum dikenal."
+    }
+  }
+}

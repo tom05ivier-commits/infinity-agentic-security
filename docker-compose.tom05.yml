@@ -1,0 +1,91 @@
+# SPDX-License-Identifier: Tom05ivier-commits-1.0
+# Copyright (c) 2026 Tomi vier
+# Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+#
+# Deployment hardened khusus tom05 (Tom05 flash Free).
+# Tidak memakai NET_ADMIN, tidak memakai network_mode host, tidak memakai
+# variabel `PORT` polos. Semua akses dibatasi loopback host.
+#
+#   docker compose -f docker-compose.tom05.yml up -d --build
+#   bash scripts/tom05_container_verify.sh
+
+services:
+  tom05:
+    build:
+      context: .
+      dockerfile: Dockerfile.tom05
+      target: runtime
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    image: tom05-inference:1.0
+    container_name: tom05-inference
+    restart: unless-stopped
+    init: true
+
+    # Hardening: user non-root, filesystem hanya-baca, tanpa capability,
+    # dan dilarang menaikkan privilege.
+    user: "10001:10001"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+    environment:
+      AGENTY_WORKSPACE: /workspace
+      AGENTY_TOM05_PORT: ${AGENTY_TOM05_PORT:-8772}
+      TOM05_PROVIDER_PORT: ${AGENTY_TOM05_PORT:-8772}
+      TOM05_UPSTREAM: ${TOM05_UPSTREAM:-http://infinity:8766/v1/chat/completions}
+      TOM05_MANAGER_HOST: ${TOM05_MANAGER_HOST:-infinity}
+      TOM05_UPSTREAM_MODEL: ${TOM05_UPSTREAM_MODEL:-hy4-flash-free}
+      TOM05_CTL: ${TOM05_CTL:-100000000}
+      TOM05_DISPLAY_NAME: ${TOM05_DISPLAY_NAME:-Tom05 Landscape Display}
+      TOM05_DISPLAY_ORIENTATION: ${TOM05_DISPLAY_ORIENTATION:-landscape}
+      TOM05_GPU_BACKENDS: ${TOM05_GPU_BACKENDS:-panfrost,mali}
+      TOM05_GPU_ACCEL: ${TOM05_GPU_ACCEL:-declared-manual}
+
+    # Jaringan bersama dengan container dasar (manager). Alias `infinity`
+    # juga tersedia lewat /etc/hosts bila manager memakai jaringan host.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      - "infinity:host-gateway"
+
+    networks:
+      agenty-net:
+        aliases:
+          - tom05
+
+    ports:
+      - "127.0.0.1:${AGENTY_TOM05_PORT:-8772}:${AGENTY_TOM05_PORT:-8772}"
+
+    tmpfs:
+      - /tmp:size=32m,mode=1777,uid=10001,gid=10001
+
+    mem_limit: 256m
+    cpus: 0.5
+    pids_limit: 64
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+    healthcheck:
+      test:
+        - CMD
+        - python3
+        - -c
+        - "import os,urllib.request; urllib.request.urlopen('http://127.0.0.1:' + os.environ.get('TOM05_PROVIDER_PORT','8772') + '/health', timeout=3)"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+    command: ["serve"]
+
+# Jaringan bersama dengan container dasar (manager). Nama dapat dioverride
+# lewat AGENTY_NETWORK; dev compose memakai nama yang sama.
+networks:
+  agenty-net:
+    name: ${AGENTY_NETWORK:-agenty-net}

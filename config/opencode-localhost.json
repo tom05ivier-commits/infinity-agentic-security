@@ -1,0 +1,25 @@
+{
+  "spdx": "SPDX-License-Identifier: Tom05ivier-commits-1.0",
+  "copyright": "Copyright (c) 2026 Tomi vier",
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "note": "Artefak ringkas konfigurasi localhost OpenCode. Provider memakai baseURL :8772; :8773 adalah layanan tom05-selfhost terpisah. Tidak memuat mcp, plugins, permissions, maupun kredensial.",
+  "status": "AKTIF",
+  "model": "tom05/tom05-flash-free",
+  "provider": {
+    "name": "Tom05",
+    "settings": {
+      "baseURL": "http://127.0.0.1:8772/v1"
+    },
+    "server": {
+      "name": "tom05-selfhost",
+      "port": 8773,
+      "backend": "self-hosted",
+      "model_mode": "retrieval",
+      "pihak_ketiga": false
+    }
+  },
+  "sumber": "~/.config/opencode/opencode.json (di luar repo; tidak disalin mentah)",
+  "rollback": "/tmp/opencode/local-default-backup/opencode.json",
+  "batas": "Loopback saja; trained: false; bukan model neural; tanpa kredensial; TTL teknis 300 detik."
+}

@@ -1,0 +1,28 @@
+{
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "timestamp": "2026-11-26T15:37:21.004378+00:00",
+  "compiler": "Icarus Verilog",
+  "lint_warnings": 0,
+  "compile_warnings": 0,
+  "vectors": 16896,
+  "checks": 16896,
+  "errors": 0,
+  "modules": [
+    {
+      "name": "firewall_match",
+      "vectors": 512,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "firewall_decide",
+      "vectors": 16384,
+      "errors": 0,
+      "status": "PASS"
+    }
+  ],
+  "reasons": [],
+  "status": "PASS",
+  "duration_ms": 1255
+}

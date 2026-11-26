@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: Tom05ivier-commits-1.0
+# Copyright (c) 2026 Tomi vier
+# Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+#
+# Template entri /etc/hosts untuk Infinity Computer System.
+# Pasang dengan: bash setup-hosts.sh
+
+127.0.0.1	infinity.local infinity
+127.0.0.1	agent.local agent
+127.0.0.1	security.local security
+127.0.0.1	chip.local chip
+127.0.0.1	chip-merah-putih.local chip-merah-putih
+127.0.0.1	chip-simulator.local chip-simulator
+127.0.0.1	chip-mirror.local chip-mirror
+127.0.0.1	chip.localhost chip-simulator.localhost chip-mirror.localhost

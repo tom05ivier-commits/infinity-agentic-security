@@ -1,0 +1,51 @@
+{
+  "spdx": "SPDX-License-Identifier: Tom05ivier-commits-1.0",
+  "copyright": "Copyright (c) 2026 Tomi vier",
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "data_root": "/root/workspace",
+  "only_agent_port": 8785,
+  "only_agent_url": "http://127.0.0.1:8785/",
+  "internal_services": [
+    "server",
+    "bridge",
+    "files",
+    "public",
+    "sites",
+    "mirror",
+    "community",
+    "tom05-provider",
+    "tom05-selfhost",
+    "service-watch",
+    "ai-chip",
+    "domain",
+    "opencode",
+    "chat-dispatch",
+    "sre-watch",
+    "permission-watch",
+    "ai-chip-watch",
+    "protection",
+    "tunnel",
+    "workflow",
+    "symphony",
+    "port-14713"
+  ],
+  "permissions": [
+    {
+      "action": "webfetch",
+      "resource": "http://127.0.0.1:*",
+      "effect": "deny"
+    },
+    {
+      "action": "webfetch",
+      "resource": "http://127.0.0.1:8785/*",
+      "effect": "allow"
+    },
+    {
+      "action": "webfetch",
+      "resource": "https://127.0.0.1:*",
+      "effect": "deny"
+    }
+  ],
+  "catatan": "Layanan supervisor tetap berjalan sebagai proses internal; yang dibatasi adalah pintu masuk agen. Satu-satunya root data adalah /root/workspace dan satu-satunya endpoint lokal agen adalah 8785."
+}

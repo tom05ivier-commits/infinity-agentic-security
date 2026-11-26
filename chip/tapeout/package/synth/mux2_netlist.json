@@ -1,0 +1,156 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "mux2": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "chip/rtl/mux2.v:5.1-7.10"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "sel": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "y": {
+          "direction": "output",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "$auto$simplemap.cc:38:simplemap_not$82": {
+          "hide_name": 1,
+          "type": "$_NOT_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/mux2.v:6.19-6.23"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4 ],
+            "Y": [ 6 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$83": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/mux2.v:6.15-6.23"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 6 ],
+            "Y": [ 7 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$84": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/mux2.v:6.28-6.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 4 ],
+            "Y": [ 8 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$85": {
+          "hide_name": 1,
+          "type": "$_OR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "chip/rtl/mux2.v:6.14-6.36"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 8 ],
+            "Y": [ 5 ]
+          }
+        }
+      },
+      "netnames": {
+        "$and$chip/rtl/mux2.v:6$2_Y": {
+          "hide_name": 1,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "chip/rtl/mux2.v:6.15-6.23"
+          }
+        },
+        "$and$chip/rtl/mux2.v:6$3_Y": {
+          "hide_name": 1,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "chip/rtl/mux2.v:6.28-6.35"
+          }
+        },
+        "$not$chip/rtl/mux2.v:6$1_Y": {
+          "hide_name": 1,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "chip/rtl/mux2.v:6.19-6.23"
+          }
+        },
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "chip/rtl/mux2.v:5.19-5.20"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "chip/rtl/mux2.v:5.22-5.23"
+          }
+        },
+        "sel": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "chip/rtl/mux2.v:5.25-5.28"
+          }
+        },
+        "y": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "chip/rtl/mux2.v:5.37-5.38"
+          }
+        }
+      }
+    }
+  }
+}

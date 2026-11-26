@@ -1,0 +1,75 @@
+<!doctype html>
+<!--
+  SPDX-License-Identifier: Tom05ivier-commits-1.0
+  Copyright (c) 2026 Tomi vier
+  Lisensi: Tom05ivier-commits v1.0 — lihat file LICENSE di root proyek.
+-->
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IT Agenty — Hub Situs</title>
+  <style>
+    :root { --bg:#0b1220; --card:#121c2e; --line:#1f2c44; --accent:#28a4a0; --red:#e14b4b; --text:#e6edf3; --muted:#8b9bb4; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; line-height:1.6; }
+    header { padding:2.5rem 1.5rem; background:linear-gradient(135deg,#0f5b8c,var(--accent)); }
+    header .wrap { max-width:960px; margin:0 auto; }
+    h1 { margin:0; font-size:2rem; }
+    header p { margin:.5rem 0 0; opacity:.9; }
+    main { max-width:960px; margin:2rem auto; padding:0 1.25rem; display:grid; gap:1rem; }
+    a.card { display:block; text-decoration:none; color:inherit; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:1.4rem; transition:transform .15s,border-color .15s; }
+    a.card:hover { transform:translateY(-2px); border-color:var(--accent); }
+    .card h2 { margin:0 0 .35rem; font-size:1.15rem; color:var(--accent); }
+    .card span { color:var(--muted); font-size:.92rem; }
+    .tag { display:inline-block; margin-top:.7rem; font-size:.72rem; padding:.15rem .55rem; border-radius:99px; background:#16324a; color:#9fd8d5; }
+    footer { text-align:center; color:var(--muted); padding:2rem 1rem; font-size:.85rem; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>IT Agenty — Infinity Computer System</h1>
+    <p>Hub situs statis mandiri. Semua berjalan lokal di container, tanpa CDN.</p>
+  </div>
+</header>
+<main>
+  <a class="card" href="/chip/">
+    <h2>Sandbox Chip Merah Putih — replika mandiri</h2>
+    <span>Replika setia halaman muka PERURI &amp; INA Digital, tanpa ketergantungan jaringan.</span>
+    <span class="tag">/chip/</span>
+  </a>
+  <a class="card" href="/agency/">
+    <h2>IT Agenty — landing page resmi</h2>
+    <span>Halaman pemasaran baru untuk Infinity Computer System &amp; Infinity Security Suite.</span>
+    <span class="tag">/agency/</span>
+  </a>
+  <a class="card" href="http://127.0.0.1:8781/">
+    <h2>IT Agenty Community — portal komunitas mandiri</h2>
+    <span>Forum posting dan balasan karya original IT Agenty dengan lisensi Tom05ivier-commits-1.0.</span>
+    <span class="tag">port 8781</span>
+  </a>
+  <a class="card" href="http://127.0.0.1:8770/">
+    <h2>Mirror aplikasi asli</h2>
+    <span>Aset chip.peruri.co.id disajikan sebagai root agar router React-nya berfungsi.</span>
+    <span class="tag">port 8770</span>
+  </a>
+  <a class="card" href="/mirror/">
+    <h2>Tentang mirror</h2>
+    <span>Penjelasan batasan mirror dan tautan ke simulator mandiri yang bekerja offline.</span>
+    <span class="tag">/mirror/</span>
+  </a>
+  <a class="card" href="http://127.0.0.1:8765/">
+    <h2>Dashboard sistem</h2>
+    <span>Snapshot identitas, lisensi, otorisasi, dan status keamanan container.</span>
+    <span class="tag">port 8765</span>
+  </a>
+  <a class="card" href="https://chip.peruri.co.id/">
+    <h2>Situs asli (eksternal)</h2>
+    <span>Tautan ke sumber asli — hanya dibuka bila container memiliki akses internet.</span>
+    <span class="tag">eksternal</span>
+  </a>
+</main>
+<footer>Tomi vier &mdash; Tom05ivier-commits v1.0</footer>
+</body>
+</html>

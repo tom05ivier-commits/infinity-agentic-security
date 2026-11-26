@@ -1,0 +1,69 @@
+{
+  "license": "Tom05ivier-commits-1.0",
+  "owner": "Tomi vier",
+  "timestamp": "2026-11-25T15:09:22.527Z",
+  "url": "file:///root/workspace/site/chip/simulator.html",
+  "presets": [
+    {
+      "preset": "hy4_dot4",
+      "module": "hy4_dot4",
+      "badge": "berhasil · 8 vektor",
+      "vectors": 8,
+      "waveform": true,
+      "mismatches": 0,
+      "pass": true
+    },
+    {
+      "preset": "hy4_quant",
+      "module": "hy4_quant",
+      "badge": "berhasil · 8 vektor",
+      "vectors": 8,
+      "waveform": true,
+      "mismatches": 0,
+      "pass": true
+    },
+    {
+      "preset": "hy4_top",
+      "module": "hy4_top",
+      "badge": "berhasil · 8 vektor",
+      "vectors": 8,
+      "waveform": true,
+      "mismatches": 0,
+      "pass": true
+    },
+    {
+      "preset": "index_match4",
+      "module": "index_match4",
+      "badge": "berhasil · 8 vektor",
+      "vectors": 8,
+      "waveform": true,
+      "mismatches": 0,
+      "pass": true
+    },
+    {
+      "preset": "tom05_soc",
+      "module": "tom05_soc",
+      "badge": "berhasil · 8 vektor",
+      "vectors": 8,
+      "waveform": true,
+      "mismatches": 0,
+      "pass": true
+    },
+    {
+      "preset": "tom05_ai_accel",
+      "module": "tom05_ai_accel",
+      "badge": "berhasil · 8 vektor",
+      "vectors": 8,
+      "waveform": true,
+      "mismatches": 0,
+      "pass": true
+    }
+  ],
+  "scopedErrors": [],
+  "page": {
+    "secureContext": true,
+    "serviceWorker": true,
+    "externalResources": []
+  },
+  "status": "PASS"
+}

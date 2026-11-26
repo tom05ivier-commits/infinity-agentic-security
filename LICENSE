@@ -1,0 +1,74 @@
+<!--
+  SPDX-License-Identifier: Tom05ivier-commits-1.0
+  Copyright (c) 2026 Tomi vier
+  Lisensi: Tom05ivier-commits v1.1 — AKTIF.
+-->
+
+# Tom05ivier-commits License (Versi 1.1)
+
+> **BERLAKU.** Amandemen ini ditandatangani pemilik pada 24 November 2026 dan
+> menggantikan `LICENSE` versi 1.0. Surat pendamping:
+> `DRAF-surat-larangan-klon-tom05ivier-commits.md`.
+
+Copyright (c) 2026 Tomi vier
+Dibuat dan dipelihara oleh: Tomi vier / IT Agenty
+
+## 1. Definisi
+
+"Lisensi" berarti Lisensi Tom05ivier-commits versi 1.1 ini setelah berlaku.
+"Karya" berarti kode sumber, dokumentasi, aset, dan material yang didistribusikan
+dengan pemberitahuan lisensi ini.
+"Pencipta" berarti Tomi vier dan/atau IT Agenty.
+"Klon" berarti salinan, turunan, atau repositori yang dibuat dari Karya.
+
+## 2. Hak yang diberikan
+
+Dengan tunduk pada ketentuan ini, Pemegang Lisensi diberi hak tanpa biaya untuk
+menggunakan, menyalin, memodifikasi, menggabungkan, menerbitkan, mendistribusikan,
+atau menjual salinan Karya.
+
+## 3. Kondisi wajib
+
+Setiap salinan, modifikasi, atau turunan HARUS:
+
+a. menyertakan salinan Lisensi ini; dan
+b. mempertahankan pemberitahuan hak cipta serta identitas Pencipta
+   ("Tom05ivier-commits", "Tomi vier") pada semua file sumber; dan
+c. mencantumkan atribusi kommit yang jelas.
+
+## 4. Persetujuan untuk klon (ketentuan baru)
+
+Tanpa mengurangi hak pada bagian 2, pembuatan Klon yang **menghapus, mengganti,
+atau menyembunyikan** atribusi Pencipta, atau penggunaan Klon untuk klaim
+kepemilikan atas Karya, memerlukan **surat izin persetujuan tertulis** dari:
+
+a. tom05ivier-commits; atau
+b. Tom05, dalam batas wewenang yang diberikan pemilik; atau
+c. pemilik, dengan tanda tangan resmi `(__signature__)`.
+
+Persetujuan harus menyebut bagian Karya, tujuan, dan jangka waktu berlaku.
+Izin tanpa batas tidak tersedia. Persetujuan dapat dicabut oleh pemilik.
+
+## 5. Pengecualian pihak ketiga
+
+Lisensi ini **tidak** berlaku untuk kode pihak ketiga (misalnya OpenCode,
+Chromium, komponen AGPL). Kode tersebut tetap tunduk pada lisensi aslinya.
+Pembatas, paywall, atau mekanisme lisensi pihak ketiga tidak boleh dihapus.
+
+## 6. Bukan paten
+
+Dokumen ini **bukan** sertifikat paten dan tidak menyatakan pendaftaran paten.
+Klaim hak eksklusif pemilik bersifat terpisah dari proses paten resmi.
+
+## 7. Berlaku dan tidak berlaku surut
+
+Lisensi ini berlaku sejak **24 November 2026**. Ketentuan baru pada bagian 4
+**tidak berlaku surut** atas Klon
+yang dibuat sah sebelum tanggal mulai itu.
+
+## 8. Tanda tangan
+| Pencipta / Pemilik | Penerima |
+|---|---|
+| Nama: Tomi vier | agent opencode |
+| Tanda tangan: `(__signature__)` | — |
+| Tanggal: 24 November 2026 | 24 November 2026 |
